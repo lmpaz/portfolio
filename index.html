@@ -45,7 +45,7 @@
     --sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --mono: 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
 
-    --radius: 0.25rem;
+    --radius: 4px;
 
     --icon-role: #5B7FDB;
     --icon-platform: #4FA37A;
@@ -66,7 +66,7 @@
     background: var(--bg);
     color: var(--fg);
     font-family: var(--sans);
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
   }
@@ -76,14 +76,14 @@
   a { color: inherit; }
 
   .wrap {
-    max-width: 55rem;
+    max-width: 880px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 24px;
   }
   .wrap-wide {
-    max-width: 71.25rem;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 24px;
   }
 
   /* ---------- NAV ---------- */
@@ -94,13 +94,13 @@
     background: var(--bg);
   }
   .topnav-inner {
-    max-width: 71.25rem;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 1.375rem 1.5rem;
+    padding: 22px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 16px;
   }
   /* Logo reduzida na navbar (substitui o "L" num círculo bordado,
      03/10/2026) — mesmo princípio do .hero-logo: ícone é só o monograma
@@ -111,20 +111,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.125rem;
-    height: 2.125rem;
+    width: 34px;
+    height: 34px;
     text-decoration: none;
     flex-shrink: 0;
   }
   .brand svg { display: block; width: 100%; height: 100%; }
   .navlinks {
     display: flex;
-    gap: 1.625rem;
+    gap: 26px;
     overflow-x: auto;
     scrollbar-width: none;
     font-family: var(--mono);
     font-weight: 400;
-    font-size: 0.8125rem;
+    font-size: 13px;
     letter-spacing: -0.01em;
     text-transform: uppercase;
   }
@@ -133,7 +133,7 @@
     text-decoration: none;
     color: var(--fg-dim);
     white-space: nowrap;
-    padding-bottom: 0.125rem;
+    padding-bottom: 2px;
     border-bottom: 1px solid transparent;
   }
   .navlinks a:hover,
@@ -142,21 +142,21 @@
   .case-home-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
+    gap: 6px;
     font-family: var(--mono);
     font-weight: 400;
-    font-size: 0.8125rem;
+    font-size: 13px;
     letter-spacing: -0.01em;
     text-transform: uppercase;
     color: var(--fg-dim);
     text-decoration: none;
-    margin-bottom: 2.5rem;
+    margin-bottom: 40px;
   }
   .case-home-link:hover { color: var(--fg); }
 
   /* ---------- HERO ---------- */
   .hero {
-    padding: 4.5rem 0 6rem;
+    padding: 72px 0 96px;
     text-align: center;
     /* degradê confirmado ao vivo no brandonleedesigns.com: azul bem claro
        esmaecendo pra branco por trás do hero */
@@ -165,7 +165,7 @@
   .hero h1 {
     font-family: var(--display);
     font-weight: 700;
-    font-size: clamp(2.875rem, 10vw, 6.5rem);
+    font-size: clamp(46px, 10vw, 104px);
     line-height: 1.15;
     letter-spacing: -0.01em;
     text-transform: uppercase;
@@ -179,16 +179,16 @@
   .hero-logo svg {
     display: block;
     /* Tamanho fixo no desktop (03/10/2026) — só passa a escalar com a tela
-       (clamp) abaixo de 61.25rem, mesmo breakpoint de tablet usado no resto do
+       (clamp) abaixo de 980px, mesmo breakpoint de tablet usado no resto do
        site (.work-grid etc.), pra não ficar gigante/minúsculo em telas
        intermediárias/pequenas. max-width:100% é só uma rede de segurança. */
-    width: 21.625rem;
+    width: 346px;
     max-width: 100%;
     height: auto;
     margin: 0 auto;
   }
   @media (max-width: 980px) {
-    .hero-logo svg { width: clamp(15rem, 42vw, 21.625rem); }
+    .hero-logo svg { width: clamp(240px, 42vw, 346px); }
   }
   .sr-only {
     position: absolute;
@@ -200,12 +200,12 @@
     border: 0;
   }
   .hero .role-line {
-    margin: 1.625rem 0 0;
+    margin: 26px 0 0;
     /* Fonte trocada pra Inter (pedido de Lucas, 03/10/2026) — só esse
        texto, não o --mono inteiro (usado em tags, navbar, etc). */
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 400;
-    font-size: clamp(0.78125rem, 1.4vw, 0.9375rem);
+    font-size: clamp(12.5px, 1.4vw, 15px);
     letter-spacing: 0;
     /* Maiúsculo removido (pedido de Lucas, 03/10/2026) — texto normal,
        como foi digitado no HTML (maiúscula só na primeira letra). */
@@ -215,7 +215,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .hero .role-line a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.125rem; }
+  .hero .role-line a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
   .hero .role-line .role-works { white-space: nowrap; }
   @media (max-width: 480px) {
     .hero .role-line .role-works { white-space: normal; }
@@ -223,33 +223,33 @@
 
   /* ---------- WORK GRID ---------- */
   .work {
-    padding: 0.5rem 0 3rem;
+    padding: 8px 0 48px;
   }
 
   .work-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 1.75rem;
-    row-gap: 3rem;
+    column-gap: 28px;
+    row-gap: 48px;
   }
   @media (max-width: 980px) {
-    .work-grid { grid-template-columns: 1fr 1fr; column-gap: 1.75rem; }
+    .work-grid { grid-template-columns: 1fr 1fr; column-gap: 28px; }
   }
   @media (max-width: 640px) {
-    .work-grid { grid-template-columns: 1fr; row-gap: 2.5rem; }
+    .work-grid { grid-template-columns: 1fr; row-gap: 40px; }
     /* Nessa largura os cards viram feed de 1 coluna — os frames (imagem/vídeo)
        vão de ponta a ponta da tela (100% de largura, sem respiro lateral);
-       só o texto (tags, título, descrição) mantém um respiro de 1.5rem.
+       só o texto (tags, título, descrição) mantém um respiro de 24px.
        Escopado a ".work" — o rodapé também usa .wrap-wide (pra alinhar com
        os cards no desktop) mas não deve perder o padding no mobile. */
     .work .wrap-wide { padding: 0; }
-    .work-meta-row, .work-title, .work-desc { padding: 0 1.5rem; }
+    .work-meta-row, .work-title, .work-desc { padding: 0 24px; }
   }
 
   .work-card {
     display: flex;
     flex-direction: column;
-    gap: 0.875rem;
+    gap: 14px;
     text-decoration: none;
     color: var(--fg);
     transition: transform 0.35s ease, opacity 0.35s ease;
@@ -285,13 +285,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5625rem 1.25rem;
-    border-radius: 62.4375rem;
+    padding: 9px 20px;
+    border-radius: 999px;
     background: #4F69F6;
     color: #fff;
     font-family: var(--mono);
     font-weight: 400;
-    font-size: 0.78125rem;
+    font-size: 12.5px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -316,24 +316,24 @@
     gap: 0;
     font-family: var(--mono);
     font-weight: 400;
-    font-size: 0.71875rem;
+    font-size: 11.5px;
     letter-spacing: 0;
     text-transform: uppercase;
     color: var(--ink-tag);
   }
-  .work-meta-row .tag:not(:last-child)::after { content: "·"; margin: 0 0.5rem; color: var(--ink-tag); }
+  .work-meta-row .tag:not(:last-child)::after { content: "·"; margin: 0 8px; color: var(--ink-tag); }
 
   .work-title {
     font-family: var(--display);
     font-weight: 500;
-    font-size: 1.3125rem;
+    font-size: 21px;
     letter-spacing: -0.01em;
     color: var(--ink);
     margin: 0;
   }
   .work-desc {
     font-family: var(--sans);
-    font-size: 0.875rem;
+    font-size: 14px;
     color: var(--fg-dim);
     max-width: 48ch;
     margin: 0;
@@ -341,24 +341,24 @@
 
   /* ---------- CASE SECTIONS ---------- */
   .case {
-    padding: 0 0 5.5rem;
+    padding: 0 0 88px;
   }
 
-  .case-head { margin-bottom: 3rem; }
+  .case-head { margin-bottom: 48px; }
 
   /* Imagem de capa de cada case: fica no topo, full-bleed (ocupa toda a
-     largura da tela, fora da coluna de leitura), com altura fixa de ~25rem.
+     largura da tela, fora da coluna de leitura), com altura fixa de ~400px.
      A imagem do produto em si (screenshot real) fica mais abaixo, dentro do
      conteúdo, no padrão console-frame de exhibits. */
   .case-cover {
     width: 100%;
-    height: 25rem;
+    height: 400px;
     overflow: hidden;
     background: var(--panel);
-    margin-bottom: 3.5rem;
+    margin-bottom: 56px;
   }
   @media (max-width: 640px) {
-    .case-cover { height: 17.5rem; }
+    .case-cover { height: 280px; }
   }
   .case-cover img {
     display: block;
@@ -369,48 +369,48 @@
   .case-eyebrow {
     font-family: var(--mono);
     font-weight: 400;
-    font-size: 0.78125rem;
+    font-size: 12.5px;
     letter-spacing: -0.01em;
     text-transform: uppercase;
     color: var(--fg-dim);
-    margin: 0 0 0.875rem;
+    margin: 0 0 14px;
   }
   .case-head h2 {
     font-family: var(--display);
     font-weight: 700;
-    font-size: clamp(1.875rem, 5vw, 2.875rem);
+    font-size: clamp(30px, 5vw, 46px);
     letter-spacing: -0.01em;
     line-height: 1.12;
     color: var(--ink-hero);
-    margin: 0 0 1.5rem;
+    margin: 0 0 24px;
     max-width: 20ch;
   }
   .case-subtitle {
     font-family: var(--sans);
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.5;
     color: var(--fg-dim);
     max-width: 56ch;
-    margin: -0.75rem 0 1.5rem;
+    margin: -12px 0 24px;
   }
   .meta-row {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 0.625rem;
+    row-gap: 10px;
     font-family: var(--mono);
     font-weight: 400;
-    font-size: 0.78125rem;
+    font-size: 12.5px;
     letter-spacing: 0;
     text-transform: uppercase;
     color: var(--fg-dim);
   }
-  .meta-row span { display: flex; align-items: center; gap: 0.4375rem; }
+  .meta-row span { display: flex; align-items: center; gap: 7px; }
   .meta-row span:not(:last-child)::after {
     content: "/";
-    margin: 0 0.875rem;
+    margin: 0 14px;
     color: var(--line);
   }
-  .meta-row .m-icon { width: 0.875rem; height: 0.875rem; flex: 0 0 auto; }
+  .meta-row .m-icon { width: 14px; height: 14px; flex: 0 0 auto; }
   .meta-row .m-role .m-icon { color: var(--icon-role); }
   .meta-row .m-platform .m-icon { color: var(--icon-platform); }
   .meta-row .m-format .m-icon { color: var(--icon-format); }
@@ -422,21 +422,21 @@
     display: block;
   }
 
-  .field { margin-bottom: 1.625rem; }
+  .field { margin-bottom: 26px; }
   .field-label {
     font-family: var(--mono);
     font-weight: 400;
-    font-size: 0.6875rem;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0;
     color: var(--fg-dim);
-    margin: 0 0 0.5rem;
+    margin: 0 0 8px;
   }
-  .field p { margin: 0 0 0.75rem; }
+  .field p { margin: 0 0 12px; }
   .field p:last-child { margin-bottom: 0; }
 
   /* exhibits */
-  .exhibits { margin-top: 2.75rem; display: grid; gap: 2.25rem; }
+  .exhibits { margin-top: 44px; display: grid; gap: 36px; }
 
   .console-frame {
     border-radius: var(--radius);
@@ -446,30 +446,30 @@
   .console-bar {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5625rem 0.75rem;
+    gap: 8px;
+    padding: 9px 12px;
     background: var(--frame-bg);
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .console-bar .dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: rgba(255,255,255,0.18); flex: 0 0 auto; }
-  .console-bar .path { font-family: var(--mono); font-size: 0.6875rem; color: rgba(255,255,255,0.45); margin-left: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .console-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.18); flex: 0 0 auto; }
+  .console-bar .path { font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,0.45); margin-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .console-frame img { display: block; width: 100%; height: auto; }
 
-  .print-frame { position: relative; padding-left: 1.25rem; }
+  .print-frame { position: relative; padding-left: 20px; }
   .print-frame::before {
     content: "";
     position: absolute;
     left: 0; top: 0; bottom: 0;
-    width: 0.125rem;
+    width: 2px;
     background: var(--line);
   }
   .print-frame .page-tab {
     font-family: var(--mono);
-    font-size: 0.6875rem;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0;
     color: var(--fg-dim);
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
     display: block;
   }
   .print-frame img {
@@ -479,7 +479,7 @@
     border-radius: var(--radius);
   }
 
-  .exhibit-cap { font-size: 0.875rem; color: var(--fg-dim); margin: 0.875rem 0 0; max-width: 60ch; }
+  .exhibit-cap { font-size: 14px; color: var(--fg-dim); margin: 14px 0 0; max-width: 60ch; }
   .exhibit-cap b { color: var(--fg); font-weight: 600; }
 
   /* ---------- EXHIBIT GRID (grade de imagens clicáveis) ---------- */
@@ -488,16 +488,16 @@
      usada no carrossel e no flipbook, mas também mostra a legenda da
      imagem dentro da lightbox. */
   .exhibit-grid {
-    margin-top: 2.75rem;
+    margin-top: 44px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(13.75rem, 1fr));
-    gap: 1.375rem 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 22px 24px;
   }
   .exhibit-card {
     all: unset;
     display: flex;
     flex-direction: column;
-    gap: 0.625rem;
+    gap: 10px;
     cursor: pointer;
   }
   .exhibit-card .console-frame {
@@ -511,15 +511,15 @@
   .exhibit-card .console-frame img { width: 100%; flex: 1 1 auto; min-height: 0; object-fit: cover; }
   .exhibit-card:hover .console-frame,
   .exhibit-card:focus-visible .console-frame {
-    transform: translateY(-0.1875rem);
-    box-shadow: 0 0.625rem 1.5rem rgba(10,10,10,0.16);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(10,10,10,0.16);
   }
-  .exhibit-card:focus-visible { outline: 0.125rem solid var(--ink); outline-offset: 0.1875rem; border-radius: var(--radius); }
-  .exhibit-card-cap { font-size: 0.84375rem; color: var(--fg-dim); margin: 0; }
+  .exhibit-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: var(--radius); }
+  .exhibit-card-cap { font-size: 13.5px; color: var(--fg-dim); margin: 0; }
   .exhibit-card-cap b { color: var(--fg); font-weight: 600; }
   .exhibit-card .expand-hint {
-    position: absolute; bottom: 0.625rem; right: 0.625rem; z-index: 5;
-    width: 1.75rem; height: 1.75rem; border-radius: 50%;
+    position: absolute; bottom: 10px; right: 10px; z-index: 5;
+    width: 28px; height: 28px; border-radius: 50%;
     background: rgba(10,10,10,0.55); color: #fff;
     display: flex; align-items: center; justify-content: center;
     opacity: 0; transition: opacity 0.2s, background 0.2s;
@@ -531,11 +531,11 @@
   /* ---------- FLIPBOOK ---------- */
   .flipbook-tab {
     font-family: var(--mono);
-    font-size: 0.6875rem;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0;
     color: var(--fg-dim);
-    margin: 0 0 0.625rem;
+    margin: 0 0 10px;
     display: block;
   }
   /* sem max-width proposital — o componente ocupa a largura inteira da
@@ -543,11 +543,11 @@
      case BetMetrica (que também não trava largura própria). */
   .flipbook-shell { position: relative; }
   .flipbook-stage {
-    position: relative; width: 100%; aspect-ratio: 1800 / 1286; perspective: 150rem;
+    position: relative; width: 100%; aspect-ratio: 1800 / 1286; perspective: 2400px;
     overflow: hidden; border-radius: var(--radius);
   }
   .flipbook-spine {
-    position: absolute; left: 0; top: 4%; bottom: 4%; width: 1.375rem;
+    position: absolute; left: 0; top: 4%; bottom: 4%; width: 22px;
     background: linear-gradient(to right, rgba(0,0,0,0.28), rgba(0,0,0,0));
     z-index: 50; pointer-events: none;
   }
@@ -677,22 +677,22 @@
   }
   .flipbook-nav {
     position: absolute; top: 50%; transform: translateY(-50%);
-    width: 2.25rem; height: 2.25rem; border-radius: 50%;
+    width: 36px; height: 36px; border-radius: 50%;
     border: 1px solid var(--line);
     background: rgba(255,255,255,0.92);
     display: flex; align-items: center; justify-content: center;
-    font-family: var(--display); font-size: 1rem; line-height: 1;
+    font-family: var(--display); font-size: 16px; line-height: 1;
     color: var(--ink); cursor: pointer; z-index: 60;
     transition: opacity 0.2s, background 0.2s;
   }
-  .flipbook-nav.prev { left: 0.75rem; }
-  .flipbook-nav.next { right: 0.75rem; }
+  .flipbook-nav.prev { left: 12px; }
+  .flipbook-nav.next { right: 12px; }
   .flipbook-nav:hover:not(:disabled) { background: #fff; }
   .flipbook-nav:disabled { opacity: 0; pointer-events: none; }
-  .flipbook-foot { display: flex; align-items: baseline; justify-content: flex-end; gap: 1rem; margin-top: 1rem; }
-  .flipbook-caption { font-size: 0.875rem; color: var(--fg-dim); margin: 0; max-width: 60ch; }
+  .flipbook-foot { display: flex; align-items: baseline; justify-content: flex-end; gap: 16px; margin-top: 16px; }
+  .flipbook-caption { font-size: 14px; color: var(--fg-dim); margin: 0; max-width: 60ch; }
   .flipbook-caption b { color: var(--fg); font-weight: 600; }
-  .flipbook-count { font-family: var(--mono); font-size: 0.6875rem; color: var(--fg-dim); letter-spacing: 0; white-space: nowrap; }
+  .flipbook-count { font-family: var(--mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0; white-space: nowrap; }
 
   /* ---------- SLIDE CAROUSEL ---------- */
   /* Carrossel de imagens cheias (material comercial), com autoplay e
@@ -711,9 +711,9 @@
   }
   .carousel-slide { flex: 0 0 100%; width: 100%; height: 100%; }
   .carousel-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
-  .carousel-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.875rem; }
+  .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
   .carousel-dots button {
-    width: 0.4375rem; height: 0.4375rem; border-radius: 50%; padding: 0;
+    width: 7px; height: 7px; border-radius: 50%; padding: 0;
     border: none; background: var(--line); cursor: pointer;
     transition: background 0.2s, transform 0.2s;
   }
@@ -729,8 +729,8 @@
      imagens" ao embed ao vivo do Figma. */
   .console-frame, .carousel-slide, .flipbook-page-slot { position: relative; }
   .zoom-trigger {
-    position: absolute; bottom: 0.625rem; right: 0.625rem; z-index: 20;
-    width: 2rem; height: 2rem; border-radius: 50%; padding: 0;
+    position: absolute; bottom: 10px; right: 10px; z-index: 20;
+    width: 32px; height: 32px; border-radius: 50%; padding: 0;
     border: none; background: rgba(10,10,10,0.55); color: #fff;
     display: flex; align-items: center; justify-content: center;
     cursor: zoom-in; opacity: 0;
@@ -753,7 +753,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 16px;
     max-width: 92vw;
     max-height: 92vh;
     width: auto;
@@ -762,7 +762,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 24px;
     flex: 0 0 auto;
   }
   .lightbox-stage {
@@ -782,63 +782,63 @@
        funcionam, com uma reserva fixa pro cabeçalho (texto + botão). */
     display: block;
     max-width: 92vw;
-    max-height: calc(92vh - 5.625rem);
+    max-height: calc(92vh - 90px);
     width: auto; height: auto;
     user-select: none; -webkit-user-drag: none;
     transform: translate(0px, 0px) scale(1);
   }
   .lightbox-close {
     position: relative; z-index: 310; flex: 0 0 auto; margin-left: auto;
-    width: 2.5rem; height: 2.5rem; border-radius: 50%; padding: 0;
+    width: 40px; height: 40px; border-radius: 50%; padding: 0;
     border: none; background: rgba(255,255,255,0.12); color: #fff;
-    font-family: var(--display); font-size: 1.25rem; line-height: 1;
+    font-family: var(--display); font-size: 20px; line-height: 1;
     display: flex; align-items: center; justify-content: center;
     cursor: pointer; transition: background 0.2s;
   }
   .lightbox-close:hover { background: rgba(255,255,255,0.24); }
   .lightbox-nav {
     position: absolute; top: 50%; transform: translateY(-50%); z-index: 320;
-    width: 2.75rem; height: 2.75rem; border-radius: 50%; padding: 0;
+    width: 44px; height: 44px; border-radius: 50%; padding: 0;
     border: none; background: rgba(255,255,255,0.12); color: #fff;
-    font-family: var(--display); font-size: 1.5rem; line-height: 1;
+    font-family: var(--display); font-size: 24px; line-height: 1;
     display: flex; align-items: center; justify-content: center;
     cursor: pointer; transition: background 0.2s, opacity 0.2s;
   }
   .lightbox-nav:hover:not(:disabled) { background: rgba(255,255,255,0.24); }
   .lightbox-nav:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
   .lightbox-nav[hidden] { display: none; }
-  .lightbox-nav.prev { left: 0.875rem; }
-  .lightbox-nav.next { right: 0.875rem; }
+  .lightbox-nav.prev { left: 14px; }
+  .lightbox-nav.next { right: 14px; }
   @media (max-width: 640px) {
-    .lightbox-nav { width: 2.375rem; height: 2.375rem; font-size: 1.25rem; }
-    .lightbox-nav.prev { left: 0.375rem; }
-    .lightbox-nav.next { right: 0.375rem; }
+    .lightbox-nav { width: 38px; height: 38px; font-size: 20px; }
+    .lightbox-nav.prev { left: 6px; }
+    .lightbox-nav.next { right: 6px; }
   }
   .lightbox-hint {
-    position: absolute; bottom: 1.25rem; left: 50%; transform: translateX(-50%);
-    font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0;
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0;
     text-transform: uppercase; color: rgba(255,255,255,0.5);
     white-space: nowrap; pointer-events: none;
   }
   @media (max-width: 640px) { .lightbox-hint { display: none; } }
   .lightbox-caption {
     flex: 1 1 auto; min-width: 0;
-    text-align: left; padding: 0.375rem 0 0;
-    font-size: 0.875rem; line-height: 1.5; color: rgba(255,255,255,0.88);
+    text-align: left; padding: 6px 0 0;
+    font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.88);
     display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
     overflow: hidden;
   }
   .lightbox-caption b { color: #fff; font-weight: 600; }
   .lightbox-caption[hidden] { display: none; }
-  @media (max-width: 640px) { .lightbox-caption { font-size: 0.8125rem; } }
+  @media (max-width: 640px) { .lightbox-caption { font-size: 13px; } }
 
   /* ---------- FOOTER ---------- */
-  .footer { padding: 0 0 2.5rem; }
+  .footer { padding: 0 0 40px; }
   /* Linha de cima do rodapé: um elemento próprio (não o .wrap-wide, cujo
-     border ficaria no limite do padding, 1.5rem além da borda real dos
+     border ficaria no limite do padding, 24px além da borda real dos
      cards) — assim a linha respeita a mesma largura de conteúdo que os
      cards e a linha debaixo de .footer-cols. */
-  .footer-rule { border-top: 1px solid var(--line); margin-bottom: 4rem; }
+  .footer-rule { border-top: 1px solid var(--line); margin-bottom: 64px; }
   /* Texto de despedida (.sign) e colunas de contato/navegação (.footer-cols)
      numa linha só, lado a lado, no desktop (pedido de Lucas, 03/10/2026) —
      antes ficavam empilhados (sign em cima, cols embaixo). .footer-top é o
@@ -853,15 +853,15 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem 2.5rem;
-    padding-bottom: 2rem;
-    margin-bottom: 1.5rem;
+    gap: 32px 40px;
+    padding-bottom: 32px;
+    margin-bottom: 24px;
     border-bottom: 1px solid var(--line);
   }
   .footer-top p.sign {
     font-family: var(--display);
     font-weight: 500;
-    font-size: clamp(1.125rem, 2.6vw, 1.5rem);
+    font-size: clamp(18px, 2.6vw, 24px);
     letter-spacing: -0.01em;
     color: var(--ink-hero);
     max-width: 30ch;
@@ -870,20 +870,20 @@
   .footer-cols {
     display: flex;
     flex-wrap: wrap;
-    /* mesmo gap do .work-grid (cards dos projetos): column-gap 1.75rem,
-       row-gap 3rem — antes era 4rem/2.5rem, destoando do grid de cards. */
-    gap: 3rem 1.75rem;
+    /* mesmo gap do .work-grid (cards dos projetos): column-gap 28px,
+       row-gap 48px — antes era 64px/40px, destoando do grid de cards. */
+    gap: 48px 28px;
   }
   .footer-label {
     font-family: var(--mono);
     font-weight: 400;
-    font-size: 0.6875rem;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0;
     color: var(--ink-tag);
-    margin: 0 0 0.75rem;
+    margin: 0 0 12px;
   }
-  .footer-col { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col { display: flex; flex-direction: column; gap: 8px; }
   /* Coluna "Navegação" do rodapé só aparece no mobile (pedido de Lucas,
      03/10/2026) — no desktop/tablet os mesmos links (Trabalhos/Contato) já
      estão na navbar fixa no topo (.navlinks), então manter os dois é
@@ -894,25 +894,41 @@
   }
   .footer-col a {
     font-family: var(--mono);
-    font-size: 0.84375rem;
+    font-size: 13.5px;
     text-decoration: none;
     color: var(--ink);
   }
-  .footer-col a:hover { text-decoration: underline; text-underline-offset: 0.1875rem; }
+  .footer-col a:hover { text-decoration: underline; text-underline-offset: 3px; }
   .footer-bottom {
     font-family: var(--mono);
-    font-size: 0.75rem;
+    font-size: 12px;
     letter-spacing: 0;
     color: var(--ink-tag);
   }
 
-  /* escala-telas-grandes */
-  /* Acima de 1440px de largura o tamanho-base (1rem) cresce junto com a tela,
-     e como todos os tamanhos do site estão em rem, tudo cresce na mesma
-     proporção: textos, cards, logo, espaçamentos e largura máxima. Até 1440px
-     nada muda. */
+  /* responsivo-telas-grandes */
+  /* Acima de 1440px de largura o layout se abre junto com a tela, sem mexer no
+     tamanho das fontes. Até 1440px nada muda (os clamp() começam nos valores
+     originais: 1140px e 880px). */
   @media (min-width: 1441px) {
-    html { font-size: clamp(100%, calc(100% + (100vw - 1440px) * 0.0111), 250%); }
+    /* Home, navbar e rodapé: a faixa de conteúdo cresce com a tela, então os
+       3 cards (e as capas animadas) ficam maiores. */
+    .wrap-wide,
+    .topnav-inner { max-width: clamp(1140px, 78vw, 2200px); }
+    .work-grid { column-gap: clamp(28px, 1.6vw, 40px); row-gap: clamp(48px, 3vw, 72px); }
+
+    /* Cases: a coluna cresce pra dar espaço às mídias (carrossel, flipbook,
+       grade de telas); o min() com vh evita mídia mais alta que a tela. */
+    .case > .wrap { max-width: clamp(880px, min(56vw, 125vh), 1480px); }
+    /* ...mas o texto continua na largura de leitura original (880 - 2x24). */
+    .case .case-head,
+    .case .field { max-width: 832px; }
+    .exhibit-grid { grid-template-columns: repeat(auto-fill, minmax(clamp(220px, 15vw, 340px), 1fr)); }
+    .case-cover { height: clamp(400px, 22vw, 560px); }
+    /* Com a mídia mais larga, a legenda do carrossel/flipbook fica à esquerda e
+       o contador à direita (antes os dois ficavam juntos, à direita). */
+    .flipbook-foot { justify-content: space-between; }
+    .flipbook-count { margin-left: auto; }
   }
 </style>
 </head>
