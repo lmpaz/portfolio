@@ -930,6 +930,39 @@
     .flipbook-foot { justify-content: space-between; }
     .flipbook-count { margin-left: auto; }
   }
+
+  /* fontes-telas-grandes */
+  /* Acima de 1440px de largura (maior que tela de notebook) todo texto ganha
+     +2px. Gerado a partir dos font-size acima; ao criar um estilo de texto
+     novo, incluir aqui também. Ficam de fora os glifos dos botões de controle. */
+  @media (min-width: 1441px) {
+    body { font-size: 18px; }
+    .navlinks { font-size: 15px; }
+    .case-home-link { font-size: 15px; }
+    .hero .role-line { font-size: calc(clamp(12.5px, 1.4vw, 15px) + 2px); }
+    .project-cursor { font-size: 14.5px; }
+    .work-meta-row { font-size: 13.5px; }
+    .work-title { font-size: 23px; }
+    .work-desc { font-size: 16px; }
+    .case-eyebrow { font-size: 14.5px; }
+    .case-head h2 { font-size: calc(clamp(30px, 5vw, 46px) + 2px); }
+    .case-subtitle { font-size: 18px; }
+    .meta-row { font-size: 14.5px; }
+    .field-label { font-size: 13px; }
+    .console-bar .path { font-size: 13px; }
+    .print-frame .page-tab { font-size: 13px; }
+    .exhibit-cap { font-size: 16px; }
+    .exhibit-card-cap { font-size: 15.5px; }
+    .flipbook-tab { font-size: 13px; }
+    .flipbook-caption { font-size: 16px; }
+    .flipbook-count { font-size: 13px; }
+    .lightbox-hint { font-size: 13px; }
+    .lightbox-caption { font-size: 16px; }
+    .footer-top p.sign { font-size: calc(clamp(18px, 2.6vw, 24px) + 2px); }
+    .footer-label { font-size: 13px; }
+    .footer-col a { font-size: 15.5px; }
+    .footer-bottom { font-size: 14px; }
+  }
 </style>
 </head>
 <body>
