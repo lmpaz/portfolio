@@ -968,6 +968,96 @@
     .footer-col a { font-size: 15.5px; }
     .footer-bottom { font-size: 14px; }
   }
+
+  /* figma-embed */
+  /* Embed do Figma no case do BetMetrica. Um "guarda" cobre o quadro até o
+     visitante clicar: sem isso a roda do mouse fica presa dando zoom no Figma
+     enquanto a pessoa só quer rolar a página. */
+  .figma-embed-block { margin-top: 44px; }
+  /* O "holder" guarda o lugar do quadro na página; o "stage" é quem vira
+     tela cheia. Assim a página não muda de altura (nem de rolagem) ao expandir. */
+  .figma-embed-holder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    max-height: 82vh;
+    background: #1E1E1E;
+  }
+  .figma-embed-stage { position: absolute; inset: 0; background: #1E1E1E; }
+  .figma-embed-stage iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0; display: block;
+  }
+  .figma-embed-guard {
+    all: unset;
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    background: rgba(10,10,10,0.22);
+    transition: background 0.2s ease, opacity 0.2s ease;
+  }
+  .figma-embed-guard:hover { background: rgba(10,10,10,0.32); }
+  .figma-embed-guard span {
+    padding: 9px 20px;
+    border-radius: 999px;
+    background: #4F69F6;
+    color: #fff;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .figma-embed-guard:focus-visible span { outline: 2px solid #fff; outline-offset: 3px; }
+  .figma-embed.is-active .figma-embed-guard { opacity: 0; pointer-events: none; }
+
+  /* Tela cheia pelo botão do próprio Figma. O botão de expandir fica dentro
+     do iframe (outro domínio) e depende de o navegador aceitar o pedido de
+     tela cheia dele; em alguns (ex.: o navegador do app do Claude) o pedido é
+     ignorado. Por isso há uma área clicável invisível exatamente em cima
+     dele (canto superior direito: o botão do Figma tem 32px, a 12px das
+     bordas): o clique expande o quadro pra janela inteira por CSS e, onde o
+     navegador permite, também entra em tela cheia de verdade. Se o Figma
+     mudar o botão de lugar, ajustar top/right aqui. */
+  .figma-embed { min-width: 0; }
+  .figma-embed-hotzone {
+    all: unset;
+    position: absolute; top: 8px; right: 8px; z-index: 4;
+    width: 40px; height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .figma-embed-hotzone:focus-visible { outline: 2px solid #4F69F6; outline-offset: -2px; }
+  .figma-embed-close {
+    all: unset;
+    display: none;
+    position: absolute; top: 12px; left: 12px; z-index: 3;
+    align-items: center; gap: 8px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: rgba(10,10,10,0.82);
+    color: #fff;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .figma-embed-close:hover { background: #0A0A0A; }
+  .figma-embed-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .figma-embed-stage.is-expanded { position: fixed; inset: 0; z-index: 1000; }
+  .figma-embed-stage.is-expanded .figma-embed-guard { display: none; }
+  .figma-embed-stage.is-expanded .figma-embed-close { display: inline-flex; }
+  html.figma-embed-open { overflow: hidden; }
+  @media (max-width: 640px) {
+    .figma-embed-holder { aspect-ratio: 4 / 5; }
+  }
+  @media (min-width: 1441px) {
+    .figma-embed-guard span { font-size: 14.5px; }
+    .figma-embed-close { font-size: 14.5px; }
+  }
 </style>
 </head>
 <body>
@@ -1136,33 +1226,26 @@
         </div>
       </div>
 
-      <p class="field-label">Telas do produto</p>
-      <div class="field">
-        <p>Da landing page de captação até o produto em uso: visão executiva e o sistema de permissões que controla quem vê o quê.</p>
-      </div>
+      <div class="figma-embed-block" data-figma-block>
+        <p class="field-label">Arquivo no Figma</p>
+        <div class="field">
+          <p>O arquivo de trabalho do projeto, aberto pra explorar: identidade de marca, flyer, telas de login, relatório principal e landing page.</p>
+        </div>
 
-      <div class="exhibit-grid">
-        <button type="button" class="exhibit-card" data-caption="<b>Landing page.</b> Site de apresentação do produto pra geração de lead, com a mesma identidade visual do material comercial — desktop e mobile.">
-          <div class="console-frame">
-            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">betmetrica.com</span></div>
-            <img src="assets/img-15-98c0163616.jpg" alt="Landing page do produto BetMetrica, com identidade visual aplicada do topo ao rodapé" loading="lazy" />
+        <div class="exhibits">
+          <div class="figma-embed" data-figma-embed>
+            <div class="console-frame">
+              <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">figma.com / Lucas Paz / Bet Metrica</span></div>
+              <div class="figma-embed-holder"><div class="figma-embed-stage">
+                <iframe title="Arquivo do BetMetrica no Figma" data-src="https://embed.figma.com/design/oBELtggoZr40bHNrJUZeIl/Lucas-Paz?node-id=12-82&amp;embed-host=pazlucas&amp;footer=false&amp;page-selector=false&amp;viewport-controls=true&amp;theme=light" loading="lazy" allowfullscreen></iframe>
+                <button type="button" class="figma-embed-guard" aria-label="Explorar o arquivo no Figma"><span>Clique para explorar</span></button>
+                <button type="button" class="figma-embed-hotzone" data-figma-expand aria-label="Tela cheia" title="Tela cheia"></button>
+                <button type="button" class="figma-embed-close" data-figma-close>&#10005; Fechar</button>
+              </div></div>
+            </div>
+            <p class="exhibit-cap"><b>Figma.</b> Clique pra explorar: arraste pra navegar e use o zoom. O bot&atilde;o no canto superior direito abre em tela cheia.</p>
           </div>
-          <p class="exhibit-card-cap"><b>Landing page.</b></p>
-        </button>
-        <button type="button" class="exhibit-card" data-caption="<b>Main Report.</b> A visão executiva em uso de verdade: Casino, Sportsbook, Aquisição e Financeiro numa tela só, responsiva pra desktop e mobile.">
-          <div class="console-frame">
-            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">app.betmetrica.com / main-report</span></div>
-            <img src="assets/img-16-4e44ed0406.jpg" alt="Tela real do Main Report do BetMetrica, com KPIs de Casino, Sportsbook, Aquisição e Financeiro" loading="lazy" />
-          </div>
-          <p class="exhibit-card-cap"><b>Main Report.</b></p>
-        </button>
-        <button type="button" class="exhibit-card" data-caption="<b>Gestão de usuários.</b> A tela por trás do sistema de permissões citado na solução: controle de acesso e status de cada usuário da plataforma.">
-          <div class="console-frame">
-            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">app.betmetrica.com / users</span></div>
-            <img src="assets/img-17-3c48345fb1.jpg" alt="Tela de gestão de usuários do BetMetrica, com lista de usuários, status de acesso e paginação" loading="lazy" />
-          </div>
-          <p class="exhibit-card-cap"><b>Gestão de usuários.</b></p>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2714,6 +2797,93 @@
   }
   window.addEventListener('hashchange', warm);
   warm();
+})();
+</script>
+<script>
+/* Embed do Figma (case BetMetrica): só carrega quando o quadro chega perto da
+   tela; destrava no clique e volta a travar quando o mouse sai, com Esc, ao
+   trocar de página ou quando o quadro sai da tela. O clique no botão de
+   expandir do Figma (área invisível em cima dele) expande o quadro pra janela
+   inteira e, onde o navegador deixa, pra tela cheia de verdade; o mesmo botão,
+   "Fechar", Esc ou sair da tela cheia do navegador desfazem. */
+(function () {
+  var box = document.querySelector('[data-figma-embed]');
+  if (!box) return;
+  var block = box.closest('[data-figma-block]') || box;
+  var stage = box.querySelector('.figma-embed-stage');
+  var holder = box.querySelector('.figma-embed-holder') || stage;
+  var frame = box.querySelector('iframe');
+  var guard = box.querySelector('.figma-embed-guard');
+  var expandBtn = box.querySelector('[data-figma-expand]');
+  var closeBtn = box.querySelector('[data-figma-close]');
+  var root = document.documentElement;
+
+  function load() {
+    if (!frame.getAttribute('src') && frame.dataset.src) frame.setAttribute('src', frame.dataset.src);
+  }
+  function expanded() { return stage.classList.contains('is-expanded'); }
+  function unlock() { load(); box.classList.add('is-active'); }
+  function lock() { if (!expanded()) box.classList.remove('is-active'); }
+
+  function fsElement() { return document.fullscreenElement || document.webkitFullscreenElement || null; }
+  function expand() {
+    unlock();
+    stage.classList.add('is-expanded');
+    root.classList.add('figma-embed-open');
+    var req = stage.requestFullscreen || stage.webkitRequestFullscreen;
+    if (req) {
+      try {
+        var p = req.call(stage);
+        if (p && p.catch) p.catch(function () {});   // sem permissão: fica só o modo expandido por CSS
+      } catch (e) {}
+    }
+  }
+  function collapse() {
+    if (!expanded()) return;
+    stage.classList.remove('is-expanded');
+    root.classList.remove('figma-embed-open');
+    if (fsElement() === stage) {
+      var exit = document.exitFullscreen || document.webkitExitFullscreen;
+      if (exit) { try { var p = exit.call(document); if (p && p.catch) p.catch(function () {}); } catch (e) {} }
+    }
+    box.classList.remove('is-active');
+    if (expandBtn) expandBtn.focus({ preventScroll: true });
+  }
+
+  guard.addEventListener('click', unlock);
+  stage.addEventListener('mouseleave', lock);
+  if (expandBtn) expandBtn.addEventListener('click', function () { if (expanded()) collapse(); else expand(); });
+  if (closeBtn) closeBtn.addEventListener('click', collapse);
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (expanded()) collapse(); else lock();
+  });
+  // saiu da tela cheia do navegador (Esc, F11...): desfaz o modo expandido junto
+  var wasFs = false;
+  function onFsChange() {
+    var now = fsElement() === stage;
+    if (wasFs && !now) collapse();
+    wasFs = now;
+  }
+  document.addEventListener('fullscreenchange', onFsChange);
+  document.addEventListener('webkitfullscreenchange', onFsChange);
+  window.addEventListener('hashchange', function () { collapse(); lock(); });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) load(); });
+    }, { rootMargin: '600px 0px' }).observe(holder);
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (!e.isIntersecting) lock(); });
+    }).observe(holder);
+  } else {
+    load();
+  }
+
+  // Onde iframes externos são bloqueados (ex.: prévia em sandbox), some com o bloco.
+  document.addEventListener('securitypolicyviolation', function (e) {
+    if (/figma[.]com/.test(e.blockedURI || '')) block.hidden = true;
+  });
 })();
 </script>
 </body>
