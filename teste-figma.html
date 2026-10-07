@@ -1,0 +1,2818 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lucas Paz — Product &amp; Brand Designer</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Lucas Paz, Product &amp; Brand Designer. Trabalhos para BetMetrica, PlugnPlay e OPA Games.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lucas Paz — Product &amp; Brand Designer">
+<meta property="og:description" content="Lucas Paz, Product &amp; Brand Designer. Trabalhos para BetMetrica, PlugnPlay e OPA Games.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://pazlucas.com/">
+<meta property="og:image" content="https://pazlucas.com/og-pazlucas-20261006.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Página inicial do portfólio de Lucas Paz, com as capas dos cases BetMetrica, PlugnPlay e Catálogo OPA Games">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pazlucas.com/og-pazlucas-20261006.jpg">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@400;500&amp;display=swap">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<style>
+  :root {
+    /* Réplica do brandonleedesigns.com — desta vez inspecionado ao vivo via
+       Chrome (getComputedStyle real), não mais inferido por texto. Fatos
+       confirmados: fundo branco puro; nome do hero em cinza-chumbo #494949
+       (não preto puro); nav/subtítulo/tags em cinza-azulado ~#7B858E;
+       títulos de projeto em preto puro; fonte de destaque real é "Graphik
+       Trial" (comercial, não disponível fora do Framer) — substituída aqui
+       por Manrope, que tem a mesma família geométrica-humanista; fonte
+       mono real é "Ingram Mono" — substituída por IBM Plex Mono. Estrutura
+       real: grade de 2 colunas de cards (imagem + tags + título + descrição),
+       não uma lista vertical — ajustado abaixo. Rodapé real tem duas colunas
+       (Contato / Navegação) abaixo da frase de despedida — replicado. */
+    --paper: #FFFFFF;
+    --ink: #0A0A0A;
+    --ink-hero: #494949;
+    --ink-dim: #7B858E;
+    --ink-tag: #808080;
+    --line: rgba(10,10,10,0.12);
+    --panel: #F5F5F4;
+    --frame-bg: #0A0A0A;
+
+    --display: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
+
+    --radius: 4px;
+
+    --icon-role: #5B7FDB;
+    --icon-platform: #4FA37A;
+    --icon-format: #C98A3E;
+    --icon-sector: #9B6FD1;
+
+    --bg: var(--paper);
+    --bg-panel: var(--panel);
+    --fg: var(--ink);
+    --fg-dim: var(--ink-dim);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--ink); color: #fff; }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .wrap-wide {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- NAV ---------- */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--bg);
+  }
+  .topnav-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  /* Logo reduzida na navbar (substitui o "L" num círculo bordado,
+     03/10/2026) — mesmo princípio do .hero-logo: ícone é só o monograma
+     "Paz" (círculo + retângulo com gradiente cônico), já é uma forma
+     fechada por si só, então o círculo com borda que envolvia o "L" foi
+     removido (teria sobrado como um círculo vazio ao redor do ícone). */
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .brand svg { display: block; width: 100%; height: 100%; }
+  .navlinks {
+    display: flex;
+    gap: 26px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+  .navlinks::-webkit-scrollbar { display: none; }
+  .navlinks a {
+    text-decoration: none;
+    color: var(--fg-dim);
+    white-space: nowrap;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+  }
+  .navlinks a:hover,
+  .navlinks a.is-active { color: var(--fg); border-bottom-color: var(--fg); }
+
+  .case-home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    text-decoration: none;
+    margin-bottom: 40px;
+  }
+  .case-home-link:hover { color: var(--fg); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 72px 0 96px;
+    text-align: center;
+    /* degradê confirmado ao vivo no brandonleedesigns.com: azul bem claro
+       esmaecendo pra branco por trás do hero */
+    background: linear-gradient(180deg, #E3EFFA 0%, #FFFFFF 92%);
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(46px, 10vw, 104px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--ink-hero);
+    margin: 0;
+  }
+  /* Logo (substitui o texto "Lucas Paz" em h1 por uma logo em SVG,
+     03/10/2026) — mesma cor de preenchimento da logo (#494949) já batia
+     com --ink-hero, então ficou visualmente idêntico ao texto antigo. */
+  .hero-logo { margin: 0; line-height: 0; }
+  .hero-logo svg {
+    display: block;
+    /* Tamanho fixo no desktop (03/10/2026) — só passa a escalar com a tela
+       (clamp) abaixo de 980px, mesmo breakpoint de tablet usado no resto do
+       site (.work-grid etc.), pra não ficar gigante/minúsculo em telas
+       intermediárias/pequenas. max-width:100% é só uma rede de segurança. */
+    width: 346px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  @media (max-width: 980px) {
+    .hero-logo svg { width: clamp(240px, 42vw, 346px); }
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .hero .role-line {
+    margin: 26px 0 0;
+    /* Fonte trocada pra Inter (pedido de Lucas, 03/10/2026) — só esse
+       texto, não o --mono inteiro (usado em tags, navbar, etc). */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    font-size: clamp(12.5px, 1.4vw, 15px);
+    letter-spacing: 0;
+    /* Maiúsculo removido (pedido de Lucas, 03/10/2026) — texto normal,
+       como foi digitado no HTML (maiúscula só na primeira letra). */
+    text-transform: none;
+    color: var(--fg-dim);
+    max-width: 58ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .role-line a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+  .hero .role-line .role-works { white-space: nowrap; }
+  @media (max-width: 480px) {
+    .hero .role-line .role-works { white-space: normal; }
+  }
+
+  /* ---------- WORK GRID ---------- */
+  .work {
+    padding: 8px 0 48px;
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 28px;
+    row-gap: 48px;
+  }
+  @media (max-width: 980px) {
+    .work-grid { grid-template-columns: 1fr 1fr; column-gap: 28px; }
+  }
+  @media (max-width: 640px) {
+    .work-grid { grid-template-columns: 1fr; row-gap: 40px; }
+    /* Nessa largura os cards viram feed de 1 coluna — os frames (imagem/vídeo)
+       vão de ponta a ponta da tela (100% de largura, sem respiro lateral);
+       só o texto (tags, título, descrição) mantém um respiro de 24px.
+       Escopado a ".work" — o rodapé também usa .wrap-wide (pra alinhar com
+       os cards no desktop) mas não deve perder o padding no mobile. */
+    .work .wrap-wide { padding: 0; }
+    .work-meta-row, .work-title, .work-desc { padding: 0 24px; }
+  }
+
+  .work-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--fg);
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    transform: scale(1);
+    opacity: 1;
+  }
+  a.work-card { cursor: pointer; }
+  a.work-card:hover { cursor: none; transform: scale(0.97); opacity: 0.82; }
+  div.work-card { cursor: default; }
+
+  .work-media {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--panel);
+  }
+  .work-media img,
+  .work-media video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ---------- CURSOR-FOLLOW "VER PROJETO" PILL ---------- */
+  /* Réplica do comportamento visto ao vivo no brandonleedesigns.com: ao
+     passar o mouse num card com link, um pill segue o cursor dentro da
+     área do card em vez do cursor padrão. */
+  .project-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 20px;
+    border-radius: 999px;
+    background: #4F69F6;
+    color: #fff;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    will-change: transform, opacity;
+  }
+  .project-cursor.is-visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  @media (hover: none), (pointer: coarse) {
+    .project-cursor { display: none !important; }
+  }
+
+  .work-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 11.5px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--ink-tag);
+  }
+  .work-meta-row .tag:not(:last-child)::after { content: "·"; margin: 0 8px; color: var(--ink-tag); }
+
+  .work-title {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 21px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .work-desc {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--fg-dim);
+    max-width: 48ch;
+    margin: 0;
+  }
+
+  /* ---------- CASE SECTIONS ---------- */
+  .case {
+    padding: 0 0 88px;
+  }
+
+  .case-head { margin-bottom: 48px; }
+
+  /* Imagem de capa de cada case: fica no topo, full-bleed (ocupa toda a
+     largura da tela, fora da coluna de leitura), com altura fixa de ~400px.
+     A imagem do produto em si (screenshot real) fica mais abaixo, dentro do
+     conteúdo, no padrão console-frame de exhibits. */
+  .case-cover {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: var(--panel);
+    margin-bottom: 56px;
+  }
+  @media (max-width: 640px) {
+    .case-cover { height: 280px; }
+  }
+  .case-cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .case-eyebrow {
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 12.5px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    margin: 0 0 14px;
+  }
+  .case-head h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(30px, 5vw, 46px);
+    letter-spacing: -0.01em;
+    line-height: 1.12;
+    color: var(--ink-hero);
+    margin: 0 0 24px;
+    max-width: 20ch;
+  }
+  .case-subtitle {
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--fg-dim);
+    max-width: 56ch;
+    margin: -12px 0 24px;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 12.5px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+  .meta-row span { display: flex; align-items: center; gap: 7px; }
+  .meta-row span:not(:last-child)::after {
+    content: "/";
+    margin: 0 14px;
+    color: var(--line);
+  }
+  .meta-row .m-icon { width: 14px; height: 14px; flex: 0 0 auto; }
+  .meta-row .m-role .m-icon { color: var(--icon-role); }
+  .meta-row .m-platform .m-icon { color: var(--icon-platform); }
+  .meta-row .m-format .m-icon { color: var(--icon-format); }
+  .meta-row .m-sector .m-icon { color: var(--icon-sector); }
+
+  /* Título sempre acima do parágrafo que descreve, em coluna única —
+     mesmo padrão em mobile e desktop, sem sidebar lateral. */
+  .case-body {
+    display: block;
+  }
+
+  .field { margin-bottom: 26px; }
+  .field-label {
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: var(--fg-dim);
+    margin: 0 0 8px;
+  }
+  .field p { margin: 0 0 12px; }
+  .field p:last-child { margin-bottom: 0; }
+
+  /* exhibits */
+  .exhibits { margin-top: 44px; display: grid; gap: 36px; }
+
+  .console-frame {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--frame-bg);
+  }
+  .console-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    background: var(--frame-bg);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .console-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.18); flex: 0 0 auto; }
+  .console-bar .path { font-family: var(--mono); font-size: 11px; color: rgba(255,255,255,0.45); margin-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .console-frame img { display: block; width: 100%; height: auto; }
+
+  .print-frame { position: relative; padding-left: 20px; }
+  .print-frame::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--line);
+  }
+  .print-frame .page-tab {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: var(--fg-dim);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .print-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+  }
+
+  .exhibit-cap { font-size: 14px; color: var(--fg-dim); margin: 14px 0 0; max-width: 60ch; }
+  .exhibit-cap b { color: var(--fg); font-weight: 600; }
+
+  /* ---------- EXHIBIT GRID (grade de imagens clicáveis) ---------- */
+  /* Grade de miniaturas no lugar de empilhar uma imagem cheia embaixo da
+     outra. Clicar em qualquer card abre a mesma lightbox de zoom/pan já
+     usada no carrossel e no flipbook, mas também mostra a legenda da
+     imagem dentro da lightbox. */
+  .exhibit-grid {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 22px 24px;
+  }
+  .exhibit-card {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .exhibit-card .console-frame {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .exhibit-card .console-frame .console-bar { flex: 0 0 auto; }
+  .exhibit-card .console-frame img { width: 100%; flex: 1 1 auto; min-height: 0; object-fit: cover; }
+  .exhibit-card:hover .console-frame,
+  .exhibit-card:focus-visible .console-frame {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(10,10,10,0.16);
+  }
+  .exhibit-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: var(--radius); }
+  .exhibit-card-cap { font-size: 13.5px; color: var(--fg-dim); margin: 0; }
+  .exhibit-card-cap b { color: var(--fg); font-weight: 600; }
+  .exhibit-card .expand-hint {
+    position: absolute; bottom: 10px; right: 10px; z-index: 5;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(10,10,10,0.55); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.2s, background 0.2s;
+  }
+  .exhibit-card:hover .expand-hint,
+  .exhibit-card:focus-visible .expand-hint { opacity: 1; }
+  @media (hover: none) { .exhibit-card .expand-hint { opacity: 0.85; } }
+
+  /* ---------- FLIPBOOK ---------- */
+  .flipbook-tab {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: var(--fg-dim);
+    margin: 0 0 10px;
+    display: block;
+  }
+  /* sem max-width proposital — o componente ocupa a largura inteira da
+     coluna de leitura, de ponta a ponta, igual ao .carousel-viewport do
+     case BetMetrica (que também não trava largura própria). */
+  .flipbook-shell { position: relative; }
+  .flipbook-stage {
+    position: relative; width: 100%; aspect-ratio: 1800 / 1286; perspective: 2400px;
+    overflow: hidden; border-radius: var(--radius);
+  }
+  .flipbook-spine {
+    position: absolute; left: 0; top: 4%; bottom: 4%; width: 22px;
+    background: linear-gradient(to right, rgba(0,0,0,0.28), rgba(0,0,0,0));
+    z-index: 50; pointer-events: none;
+  }
+  .flipbook-page {
+    position: absolute; inset: 0;
+    transform-style: preserve-3d; transform-origin: left center;
+    transition: transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .flipbook-page.is-flipped { transform: rotateY(-180deg); }
+  /* páginas com spread (2 imagens lado a lado) NÃO viram inteiras — ver
+     .flipbook-page-slot:last-child.is-turning abaixo, que faz só a
+     página da direita virar sobre a dobra central, como um catálogo de
+     verdade. A capa (sem data-spread) continua virando inteira. */
+  .flipbook-page[data-spread="true"].is-flipped { transform: none; }
+  .flipbook-face {
+    position: absolute; inset: 0;
+    backface-visibility: hidden; overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--bg);
+    transform-style: preserve-3d;
+  }
+  /* zoom/pan "cinematográfico": cada página do flipbook pode conter 1 imagem
+     (capa) ou 2 imagens DIFERENTES lado a lado (um spread de verdade: duas
+     páginas distintas do catálogo, cada uma ocupando metade do frame).
+     .flipbook-spread-imgs é o alvo do zoom via JS — alternando
+     transform/transform-origin entre "sem zoom" (as duas páginas visíveis,
+     lado a lado) e "zoom numa metade" (scale 2, ancorado na esquerda ou na
+     direita, o que amplia só a imagem daquele lado até preencher o frame).
+     transform-origin é animável, então ir de 0% (esquerda) pra 100%
+     (direita) com o scale fixo em 2 produz um "arrastar" suave de uma
+     página pra outra, sem passar por fora da imagem. */
+  .flipbook-spread-imgs {
+    position: absolute; inset: 0;
+    display: flex;
+    transform-origin: 50% 50%;
+    transform: scale(1);
+    transition: transform 0.46s cubic-bezier(0.645, 0.045, 0.355, 1),
+                transform-origin 0.46s cubic-bezier(0.645, 0.045, 0.355, 1);
+    will-change: transform;
+    transform-style: preserve-3d;
+  }
+  /* object-fit: contain (não cover) — cada página mantém sua proporção
+     original por inteiro, sem cortar nada. Como as imagens são paisagem
+     (mais largas que altas) e cada slot de um spread é um retângulo mais
+     alto que largo (metade da largura do frame), sobra área vazia acima/
+     abaixo da imagem — preenchida com o fundo escuro do slot em vez de
+     ficar em branco ou com as imagens se sobrepondo. */
+  .flipbook-page-slot {
+    position: relative; height: 100%; flex: 1 1 50%;
+    background: var(--frame-bg); overflow: hidden;
+  }
+  .flipbook-page-slot img { display: block; width: 100%; height: 100%; object-fit: contain; backface-visibility: hidden; }
+  .flipbook-face.face-back { transform: rotateY(180deg); background: var(--panel); }
+  /* dobra real de catálogo: num spread de 2 páginas, só a página da
+     direita (a que fica na fronteira com o próximo/anterior spread) gira
+     sobre a dobra central (a própria borda esquerda do slot) — a página
+     da esquerda fica parada o tempo todo. :last-child porque um spread
+     sempre tem exatamente 2 .flipbook-page-slot. */
+  /* a própria página que está virando (:last-child) precisa de
+     overflow:visible — ao contrário do resto do livro — pra deixar o
+     verso (quando passa dos 90°) sair da metade direita e cobrir
+     visualmente a página da esquerda, igual uma folha de verdade caindo
+     por cima da página anterior. Quem contém o "estouro" é só o
+     .flipbook-stage (overflow:hidden lá fora, nos limites do livro
+     inteiro) — não precisa de clipe por metade de página aqui. */
+  .flipbook-page[data-spread="true"] .flipbook-page-slot:last-child {
+    overflow: visible;
+  }
+  .flipbook-page[data-spread="true"] .flipbook-page-slot:last-child > .flipbook-slot-flip {
+    position: absolute; inset: 0;
+    transform-origin: left center;
+    transition: transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+  .flipbook-page[data-spread="true"] .flipbook-page-slot:last-child > .flipbook-slot-flip.is-turning {
+    transform: rotateY(-180deg);
+  }
+  /* verso da página virando: em vez de um verso vazio, mostra a imagem da
+     PRÓXIMA página (a mesma que abre o spread seguinte) — assim, ao virar
+     a página 3, o verso dela já "é" a página 16, exatamente como folhear
+     um livro de verdade, em que o verso de uma folha já é a página que vem.
+     IMPORTANTE: a origem daqui é a padrão (centro do PRÓPRIO slot — não a
+     dobra do pai). Se a origem fosse a mesma do wrapper (.flipbook-slot-flip,
+     que gira na dobra), os dois rotateY (pai -180 + verso 180) cancelam a
+     ROTAÇÃO *E* a POSIÇÃO um do outro por girarem em torno do mesmíssimo
+     eixo — resultado: o verso "aparece" na hora certa, mas sempre preso na
+     metade direita (a folha parece girar e parar no meio, nunca cruzando a
+     dobra pra cobrir a página da esquerda). Com a origem própria (padrão),
+     o verso vira em torno do seu próprio centro (fica mirror-invertido e
+     de costas, só isso) e quem desloca essa folha inteira pela dobra é só
+     a rotação do pai — as duas rotações não se cancelam, e a folha varre
+     de verdade da direita pra esquerda, com o verso aparecendo no ângulo
+     certo (>90°) e pousando sobre a página 2 ao final, como um livro real. */
+  .flipbook-page[data-spread="true"] .flipbook-page-slot:last-child > .flipbook-slot-flip > .flipbook-slot-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transform: rotateY(180deg);
+  }
+  /* testado empiricamente: o rotateY(180deg) acima (eixo = centro do
+     próprio verso) já deixa a arte correta/legível sozinho — um
+     scaleX(-1) extra aqui, ao contrário do que pareceria necessário,
+     ESPELHA a imagem (confirmado visualmente), então o filho abaixo só
+     existe pra hospedar a imagem de fundo, sem nenhum transform próprio. */
+  .flipbook-page[data-spread="true"] .flipbook-page-slot:last-child > .flipbook-slot-flip > .flipbook-slot-back > .flipbook-slot-back-img {
+    position: absolute; inset: 0;
+    background-color: var(--frame-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  /* pré-visualização da PRÓXIMA página (17), parada por baixo do wrapper
+     que gira — nunca rotaciona. Como não tem transform, fica numa
+     stacking context "normal" e pinta ANTES do .flipbook-slot-flip (que
+     vem depois no HTML), ou seja, por baixo dele — exatamente como a
+     página 17 já está ali, só esperando a página 3 girar e desvendá-la
+     aos poucos (pela perspectiva 3D, a folha que gira "encolhe" e deixa
+     ver, pouco a pouco, o que está por trás, antes mesmo da virada
+     terminar) em vez de aparecer de repente só no fim da animação. */
+  .flipbook-page[data-spread="true"] .flipbook-page-slot:last-child > .flipbook-slot-next {
+    position: absolute; inset: 0;
+    background-color: var(--frame-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  .flipbook-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.92);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-size: 16px; line-height: 1;
+    color: var(--ink); cursor: pointer; z-index: 60;
+    transition: opacity 0.2s, background 0.2s;
+  }
+  .flipbook-nav.prev { left: 12px; }
+  .flipbook-nav.next { right: 12px; }
+  .flipbook-nav:hover:not(:disabled) { background: #fff; }
+  .flipbook-nav:disabled { opacity: 0; pointer-events: none; }
+  .flipbook-foot { display: flex; align-items: baseline; justify-content: flex-end; gap: 16px; margin-top: 16px; }
+  .flipbook-caption { font-size: 14px; color: var(--fg-dim); margin: 0; max-width: 60ch; }
+  .flipbook-caption b { color: var(--fg); font-weight: 600; }
+  .flipbook-count { font-family: var(--mono); font-size: 11px; color: var(--fg-dim); letter-spacing: 0; white-space: nowrap; }
+
+  /* ---------- SLIDE CAROUSEL ---------- */
+  /* Carrossel de imagens cheias (material comercial), com autoplay e
+     navegação manual (setas + dots). Reaproveita .flipbook-nav/-foot/
+     -caption/-count pra ficar consistente com o flipbook do case 03. */
+  .carousel-viewport {
+    position: relative; border-radius: var(--radius); overflow: hidden; background: var(--panel);
+    /* altura travada na proporção das imagens (todas 1760x990) pra tela
+       não "pular" de tamanho ao trocar de slide */
+    aspect-ratio: 1760 / 990;
+  }
+  .carousel-track {
+    position: relative; display: flex; width: 100%; height: 100%;
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
+  }
+  .carousel-slide { flex: 0 0 100%; width: 100%; height: 100%; }
+  .carousel-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+  .carousel-dots button {
+    width: 7px; height: 7px; border-radius: 50%; padding: 0;
+    border: none; background: var(--line); cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .carousel-dots button.is-active { background: var(--ink); transform: scale(1.2); }
+  /* a legenda reserva (via JS) a altura da maior legenda entre os slides;
+     alinhar pelo topo evita que o contador "flutue" estranho nesse espaço. */
+  .slide-carousel .flipbook-foot { align-items: flex-start; }
+
+  /* ---------- ZOOM / PAN LIGHTBOX ---------- */
+  /* Botão de lupa que aparece sobre qualquer imagem de exhibit (console-frame,
+     slide do carrossel, página do flipbook) e abre a imagem numa visualização
+     cheia, com zoom (scroll/pinça) e pan (arrastar) — a alternativa "só com
+     imagens" ao embed ao vivo do Figma. */
+  .console-frame, .carousel-slide, .flipbook-page-slot { position: relative; }
+  .zoom-trigger {
+    position: absolute; bottom: 10px; right: 10px; z-index: 20;
+    width: 32px; height: 32px; border-radius: 50%; padding: 0;
+    border: none; background: rgba(10,10,10,0.55); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    cursor: zoom-in; opacity: 0;
+    transition: opacity 0.2s, background 0.2s;
+  }
+  .zoom-trigger:hover { background: rgba(10,10,10,0.8); }
+  .console-frame:hover .zoom-trigger,
+  .carousel-slide:hover .zoom-trigger,
+  .flipbook-page-slot:hover .zoom-trigger,
+  .zoom-trigger:focus-visible { opacity: 1; }
+  @media (hover: none) { .zoom-trigger { opacity: 0.85; } }
+
+  .lightbox {
+    position: fixed; inset: 0; z-index: 300;
+    background: rgba(8,8,8,0.94);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .lightbox[hidden] { display: none; }
+  .lightbox-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 92vw;
+    max-height: 92vh;
+    width: auto;
+  }
+  .lightbox-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex: 0 0 auto;
+  }
+  .lightbox-stage {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; touch-action: none; cursor: zoom-in;
+  }
+  .lightbox-stage.is-zoomed { cursor: grab; }
+  .lightbox-stage.is-dragging { cursor: grabbing; }
+  .lightbox-stage img {
+    /* Limites em vw/vh direto na imagem (não porcentagem de um ancestral
+       flex sem altura definida): com %, o cálculo depende da altura do
+       .lightbox-stage ser "definida", mas como o painel só tem max-height
+       (altura de conteúdo), isso quebra em telas largas/baixas — a imagem
+       renderiza no tamanho natural e é cortada pelo overflow:hidden,
+       mostrando só o centro. vw/vh são sempre absolutos, então sempre
+       funcionam, com uma reserva fixa pro cabeçalho (texto + botão). */
+    display: block;
+    max-width: 92vw;
+    max-height: calc(92vh - 90px);
+    width: auto; height: auto;
+    user-select: none; -webkit-user-drag: none;
+    transform: translate(0px, 0px) scale(1);
+  }
+  .lightbox-close {
+    position: relative; z-index: 310; flex: 0 0 auto; margin-left: auto;
+    width: 40px; height: 40px; border-radius: 50%; padding: 0;
+    border: none; background: rgba(255,255,255,0.12); color: #fff;
+    font-family: var(--display); font-size: 20px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .lightbox-close:hover { background: rgba(255,255,255,0.24); }
+  .lightbox-nav {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 320;
+    width: 44px; height: 44px; border-radius: 50%; padding: 0;
+    border: none; background: rgba(255,255,255,0.12); color: #fff;
+    font-family: var(--display); font-size: 24px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: background 0.2s, opacity 0.2s;
+  }
+  .lightbox-nav:hover:not(:disabled) { background: rgba(255,255,255,0.24); }
+  .lightbox-nav:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+  .lightbox-nav[hidden] { display: none; }
+  .lightbox-nav.prev { left: 14px; }
+  .lightbox-nav.next { right: 14px; }
+  @media (max-width: 640px) {
+    .lightbox-nav { width: 38px; height: 38px; font-size: 20px; }
+    .lightbox-nav.prev { left: 6px; }
+    .lightbox-nav.next { right: 6px; }
+  }
+  .lightbox-hint {
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0;
+    text-transform: uppercase; color: rgba(255,255,255,0.5);
+    white-space: nowrap; pointer-events: none;
+  }
+  @media (max-width: 640px) { .lightbox-hint { display: none; } }
+  .lightbox-caption {
+    flex: 1 1 auto; min-width: 0;
+    text-align: left; padding: 6px 0 0;
+    font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.88);
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  .lightbox-caption b { color: #fff; font-weight: 600; }
+  .lightbox-caption[hidden] { display: none; }
+  @media (max-width: 640px) { .lightbox-caption { font-size: 13px; } }
+
+  /* ---------- FOOTER ---------- */
+  .footer { padding: 0 0 40px; }
+  /* Linha de cima do rodapé: um elemento próprio (não o .wrap-wide, cujo
+     border ficaria no limite do padding, 24px além da borda real dos
+     cards) — assim a linha respeita a mesma largura de conteúdo que os
+     cards e a linha debaixo de .footer-cols. */
+  .footer-rule { border-top: 1px solid var(--line); margin-bottom: 64px; }
+  /* Texto de despedida (.sign) e colunas de contato/navegação (.footer-cols)
+     numa linha só, lado a lado, no desktop (pedido de Lucas, 03/10/2026) —
+     antes ficavam empilhados (sign em cima, cols embaixo). .footer-top é o
+     wrapper flex dos dois; a linha divisória que antes ficava colada no
+     fundo de .footer-cols (reta acima do "© Lucas Paz") sobe pra esse
+     wrapper, já que agora ele é quem ocupa a última "fileira" do bloco
+     principal do rodapé. Sem media query: flex-wrap já empilha os dois de
+     volta sozinho quando não cabem lado a lado (telas estreitas) — mesmo
+     resultado de antes no mobile, sem precisar duplicar um breakpoint. */
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px 40px;
+    padding-bottom: 32px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .footer-top p.sign {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(18px, 2.6vw, 24px);
+    letter-spacing: -0.01em;
+    color: var(--ink-hero);
+    max-width: 30ch;
+    margin: 0;
+  }
+  .footer-cols {
+    display: flex;
+    flex-wrap: wrap;
+    /* mesmo gap do .work-grid (cards dos projetos): column-gap 28px,
+       row-gap 48px — antes era 64px/40px, destoando do grid de cards. */
+    gap: 48px 28px;
+  }
+  .footer-label {
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: var(--ink-tag);
+    margin: 0 0 12px;
+  }
+  .footer-col { display: flex; flex-direction: column; gap: 8px; }
+  /* Coluna "Navegação" do rodapé só aparece no mobile (pedido de Lucas,
+     03/10/2026) — no desktop/tablet os mesmos links (Trabalhos/Contato) já
+     estão na navbar fixa no topo (.navlinks), então manter os dois é
+     redundante. Mesmo breakpoint mobile usado em .work-media/.lightbox-caption. */
+  .footer-col-nav { display: none; }
+  @media (max-width: 640px) {
+    .footer-col-nav { display: flex; }
+  }
+  .footer-col a {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .footer-col a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .footer-bottom {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0;
+    color: var(--ink-tag);
+  }
+
+  /* responsivo-telas-grandes */
+  /* Acima de 1440px de largura o layout se abre junto com a tela, sem mexer no
+     tamanho das fontes. Até 1440px nada muda (os clamp() começam nos valores
+     originais: 1140px e 880px). */
+  @media (min-width: 1441px) {
+    /* Home, navbar e rodapé: a faixa de conteúdo cresce com a tela, então os
+       3 cards (e as capas animadas) ficam maiores. */
+    .wrap-wide,
+    .topnav-inner { max-width: clamp(1140px, 78vw, 2200px); }
+    .work-grid { column-gap: clamp(28px, 1.6vw, 40px); row-gap: clamp(48px, 3vw, 72px); }
+
+    /* Cases: a coluna cresce pra dar espaço às mídias (carrossel, flipbook,
+       grade de telas); o min() com vh evita mídia mais alta que a tela. */
+    .case > .wrap { max-width: clamp(880px, min(56vw, 125vh), 1480px); }
+    /* ...mas o texto continua na largura de leitura original (880 - 2x24). */
+    .case .case-head,
+    .case .field { max-width: 832px; }
+    .exhibit-grid { grid-template-columns: repeat(auto-fill, minmax(clamp(220px, 15vw, 340px), 1fr)); }
+    .case-cover { height: clamp(400px, 22vw, 560px); }
+    /* Com a mídia mais larga, a legenda do carrossel/flipbook fica à esquerda e
+       o contador à direita (antes os dois ficavam juntos, à direita). */
+    .flipbook-foot { justify-content: space-between; }
+    .flipbook-count { margin-left: auto; }
+  }
+
+  /* fontes-telas-grandes */
+  /* Acima de 1440px de largura (maior que tela de notebook) todo texto ganha
+     +2px. Gerado a partir dos font-size acima; ao criar um estilo de texto
+     novo, incluir aqui também. Ficam de fora os glifos dos botões de controle. */
+  @media (min-width: 1441px) {
+    body { font-size: 18px; }
+    .navlinks { font-size: 15px; }
+    .case-home-link { font-size: 15px; }
+    .hero .role-line { font-size: calc(clamp(12.5px, 1.4vw, 15px) + 2px); }
+    .project-cursor { font-size: 14.5px; }
+    .work-meta-row { font-size: 13.5px; }
+    .work-title { font-size: 23px; }
+    .work-desc { font-size: 16px; }
+    .case-eyebrow { font-size: 14.5px; }
+    .case-head h2 { font-size: calc(clamp(30px, 5vw, 46px) + 2px); }
+    .case-subtitle { font-size: 18px; }
+    .meta-row { font-size: 14.5px; }
+    .field-label { font-size: 13px; }
+    .console-bar .path { font-size: 13px; }
+    .print-frame .page-tab { font-size: 13px; }
+    .exhibit-cap { font-size: 16px; }
+    .exhibit-card-cap { font-size: 15.5px; }
+    .flipbook-tab { font-size: 13px; }
+    .flipbook-caption { font-size: 16px; }
+    .flipbook-count { font-size: 13px; }
+    .lightbox-hint { font-size: 13px; }
+    .lightbox-caption { font-size: 16px; }
+    .footer-top p.sign { font-size: calc(clamp(18px, 2.6vw, 24px) + 2px); }
+    .footer-label { font-size: 13px; }
+    .footer-col a { font-size: 15.5px; }
+    .footer-bottom { font-size: 14px; }
+  }
+
+  /* figma-embed */
+  /* Embed do Figma no case do BetMetrica. Um "guarda" cobre o quadro até o
+     visitante clicar: sem isso a roda do mouse fica presa dando zoom no Figma
+     enquanto a pessoa só quer rolar a página. */
+  .figma-embed-block { margin-top: 44px; }
+  .figma-embed-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    max-height: 82vh;
+    background: #1E1E1E;
+  }
+  .figma-embed-stage iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0; display: block;
+  }
+  .figma-embed-guard {
+    all: unset;
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    background: rgba(10,10,10,0.22);
+    transition: background 0.2s ease, opacity 0.2s ease;
+  }
+  .figma-embed-guard:hover { background: rgba(10,10,10,0.32); }
+  .figma-embed-guard span {
+    padding: 9px 20px;
+    border-radius: 999px;
+    background: #4F69F6;
+    color: #fff;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .figma-embed-guard:focus-visible span { outline: 2px solid #fff; outline-offset: 3px; }
+  .figma-embed.is-active .figma-embed-guard { opacity: 0; pointer-events: none; }
+  @media (max-width: 640px) {
+    .figma-embed-stage { aspect-ratio: 4 / 5; }
+  }
+  @media (min-width: 1441px) {
+    .figma-embed-guard span { font-size: 14.5px; }
+  }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="brand" href="#hero" data-route="home">
+      <span class="sr-only">Lucas Paz</span>
+      <svg viewBox="0 0 968 968" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<g clip-path="url(#paint0_angular_174_13310_clip_path)" data-figma-skip-parse="true"><g transform="matrix(1.18294e-08 0.330244 -0.330244 1.18294e-08 484.244 385.244)"><foreignObject x="-1004" y="-1004" width="2008" height="2008"><div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(73, 73, 73, 0) 0deg,rgba(73, 73, 73, 1) 2.87996deg,rgba(73, 73, 73, 1) 181.387deg,rgba(73, 73, 73, 0) 360deg);height:100%;width:100%;opacity:1"></div></foreignObject></g></g><circle cx="484.244" cy="385.244" r="330.244" transform="rotate(90 484.244 385.244)" data-figma-gradient-fill="{&#34;type&#34;:&#34;GRADIENT_ANGULAR&#34;,&#34;stops&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.0079998783767223358},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.50385361909866333},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.0},&#34;position&#34;:1.0}],&#34;transform&#34;:{&#34;m00&#34;:2.3658707505092025e-05,&#34;m01&#34;:-660.48889160156250,&#34;m02&#34;:814.488769531250,&#34;m10&#34;:660.48889160156250,&#34;m11&#34;:2.3658712962060235e-05,&#34;m12&#34;:54.999954223632812},&#34;opacity&#34;:1.0,&#34;blendMode&#34;:&#34;NORMAL&#34;,&#34;stopsVar&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.0079998783767223358},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.50385361909866333},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.0},&#34;position&#34;:1.0}],&#34;visible&#34;:true}"/>
+<rect x="154" y="382.615" width="330.244" height="531.033" fill="#494949"/>
+<defs>
+<clipPath id="paint0_angular_174_13310_clip_path"><circle cx="484.244" cy="385.244" r="330.244" transform="rotate(90 484.244 385.244)"/></clipPath></defs>
+</svg>
+    </a>
+    <div class="navlinks">
+      <a href="#contato" data-route="home">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="hero">
+  <div class="wrap">
+    <h1 class="hero-logo">
+      <span class="sr-only">Lucas Paz</span>
+      <svg viewBox="0 0 2812 1692" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<path d="M263.473 478.218V174.374H276.987V478.218H263.473ZM789.215 479.446C770.924 479.446 755.227 476.17 742.123 469.618C729.019 462.794 718.919 452.829 711.821 439.725C704.723 426.349 701.174 409.969 701.174 390.586V265.691H714.687V389.767C714.687 415.156 721.239 434.402 734.343 447.506C747.447 460.61 765.874 467.161 789.624 467.161C806.55 467.161 821.155 463.613 833.44 456.515C845.998 449.144 855.553 438.906 862.105 425.803C868.657 412.699 871.933 397.548 871.933 380.349V265.691H885.446V478.218H872.342V418.841L873.98 422.527C867.974 439.998 857.6 453.921 842.859 464.295C828.117 474.396 810.236 479.446 789.215 479.446ZM1393.63 479.446C1373.43 479.446 1355.28 474.942 1339.17 465.933C1323.34 456.651 1310.78 443.957 1301.5 427.85C1292.49 411.47 1287.98 392.77 1287.98 371.749C1287.98 350.729 1292.49 332.165 1301.5 316.058C1310.78 299.679 1323.34 286.984 1339.17 277.975C1355.28 268.694 1373.43 264.053 1393.63 264.053C1409.74 264.053 1424.62 267.192 1438.27 273.471C1451.92 279.477 1463.25 288.486 1472.26 300.498L1462.02 309.097C1454.1 297.904 1444.14 289.714 1432.13 284.527C1420.39 279.34 1407.56 276.747 1393.63 276.747C1376.16 276.747 1360.46 280.705 1346.54 288.622C1332.62 296.539 1321.56 307.732 1313.37 322.201C1305.46 336.397 1301.5 352.913 1301.5 371.749C1301.5 390.586 1305.46 407.239 1313.37 421.708C1321.56 435.903 1332.62 447.096 1346.54 455.286C1360.46 463.203 1376.16 467.161 1393.63 467.161C1407.56 467.161 1420.39 464.568 1432.13 459.381C1444.14 453.921 1454.1 445.731 1462.02 434.811L1472.26 443.001C1463.25 455.286 1451.92 464.431 1438.27 470.437C1424.62 476.443 1409.74 479.446 1393.63 479.446ZM2007.8 478.218V428.669L2007.39 421.298V340.628C2007.39 319.607 2001.8 303.637 1990.6 292.717C1979.41 281.797 1963.17 276.337 1941.87 276.337C1926.31 276.337 1912.12 279.067 1899.29 284.527C1886.46 289.714 1875.4 296.539 1866.12 305.002L1858.75 295.174C1868.85 285.619 1881.27 278.112 1896.01 272.652C1910.75 266.919 1926.18 264.053 1942.28 264.053C1967.67 264.053 1987.06 270.605 2000.43 283.708C2014.08 296.539 2020.91 315.512 2020.91 340.628V478.218H2007.8ZM1928.77 479.446C1912.66 479.446 1898.88 476.989 1887.41 472.075C1876.22 467.161 1867.62 460.2 1861.61 451.191C1855.61 441.909 1852.61 431.399 1852.61 419.66C1852.61 409.286 1855.06 399.732 1859.98 390.996C1864.89 381.987 1872.94 374.889 1884.14 369.702C1895.6 364.242 1910.89 361.512 1930 361.512H2012.31V372.568H1930C1906.8 372.568 1890.28 376.936 1880.45 385.672C1870.9 394.408 1866.12 405.464 1866.12 418.841C1866.12 433.856 1871.72 445.868 1882.91 454.877C1894.1 463.613 1909.66 467.98 1929.59 467.98C1949.25 467.98 1965.49 463.613 1978.32 454.877C1991.15 445.868 2000.84 433.173 2007.39 416.794L2011.9 425.803C2006.44 441.909 1996.61 454.877 1982.41 464.704C1968.22 474.532 1950.34 479.446 1928.77 479.446ZM2496.38 479.446C2478.91 479.446 2462.53 476.853 2447.24 471.666C2431.95 466.206 2420.35 459.381 2412.43 451.191L2418.99 440.544C2426.9 447.642 2437.69 453.921 2451.34 459.381C2464.99 464.841 2480.14 467.571 2496.79 467.571C2520.54 467.571 2537.6 463.476 2547.98 455.286C2558.62 447.096 2563.95 436.449 2563.95 423.346C2563.95 413.791 2561.35 406.283 2556.17 400.824C2550.98 395.364 2544.15 391.132 2535.69 388.129C2527.23 385.126 2517.81 382.806 2507.44 381.168C2497.34 379.257 2487.1 377.209 2476.72 375.025C2466.35 372.568 2456.93 369.429 2448.47 365.607C2440.01 361.512 2433.18 355.916 2427.99 348.818C2422.81 341.72 2420.21 332.302 2420.21 320.563C2420.21 310.462 2422.94 301.18 2428.4 292.717C2434.14 284.254 2442.74 277.429 2454.2 272.243C2465.67 266.783 2480.27 264.053 2498.02 264.053C2511.12 264.053 2524.23 266.1 2537.33 270.195C2550.71 274.017 2561.35 279.204 2569.27 285.756L2562.31 296.403C2553.85 289.578 2543.88 284.527 2532.42 281.251C2521.22 277.975 2509.62 276.337 2497.61 276.337C2475.5 276.337 2459.39 280.569 2449.29 289.032C2439.19 297.495 2434.14 307.868 2434.14 320.153C2434.14 329.981 2436.73 337.898 2441.92 343.904C2447.1 349.637 2453.93 354.005 2462.39 357.008C2470.86 360.011 2480.14 362.468 2490.24 364.379C2500.61 366.29 2510.85 368.337 2520.95 370.521C2531.32 372.705 2540.74 375.708 2549.2 379.53C2557.67 383.352 2564.49 388.675 2569.68 395.5C2574.87 402.325 2577.46 411.607 2577.46 423.346C2577.46 434.265 2574.32 444.093 2568.04 452.829C2562.04 461.292 2553.03 467.844 2541.01 472.485C2529.28 477.126 2514.4 479.446 2496.38 479.446Z" fill="#8A8A8A"/>
+<g clip-path="url(#paint0_angular_114_27128_clip_path)" data-figma-skip-parse="true"><g transform="matrix(1.18294e-08 0.330244 -0.330244 1.18294e-08 528.39 1109.61)"><foreignObject x="-1004" y="-1004" width="2008" height="2008"><div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(73, 73, 73, 0) 0deg,rgba(73, 73, 73, 1) 2.87996deg,rgba(73, 73, 73, 1) 181.387deg,rgba(73, 73, 73, 0) 360deg);height:100%;width:100%;opacity:1"></div></foreignObject></g></g><circle cx="528.39" cy="1109.61" r="330.244" transform="rotate(90 528.39 1109.61)" data-figma-gradient-fill="{&#34;type&#34;:&#34;GRADIENT_ANGULAR&#34;,&#34;stops&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.0079998783767223358},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.50385361909866333},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.0},&#34;position&#34;:1.0}],&#34;transform&#34;:{&#34;m00&#34;:2.3658707505092025e-05,&#34;m01&#34;:-660.48889160156250,&#34;m02&#34;:858.6347656250,&#34;m10&#34;:660.48889160156250,&#34;m11&#34;:2.3658712962060235e-05,&#34;m12&#34;:779.36126708984375},&#34;opacity&#34;:1.0,&#34;blendMode&#34;:&#34;NORMAL&#34;,&#34;stopsVar&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.0079998783767223358},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.50385361909866333},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.0},&#34;position&#34;:1.0}],&#34;visible&#34;:true}"/>
+<rect x="198.146" y="1106.98" width="330.244" height="531.033" fill="#494949"/>
+<g clip-path="url(#paint1_angular_114_27128_clip_path)" data-figma-skip-parse="true"><g transform="matrix(0.330244 2.88709e-08 -2.88709e-08 0.330244 1405.52 1109.63)"><foreignObject x="-1004" y="-1004" width="2008" height="2008"><div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(73, 73, 73, 0) 0deg,rgba(73, 73, 73, 1) 360deg);height:100%;width:100%;opacity:1"></div></foreignObject></g></g><path d="M1405.52 1439.87C1339.3 1439.87 1274.61 1419.96 1219.85 1382.73C1165.09 1345.5 1122.78 1292.67 1098.42 1231.09C1074.07 1169.51 1068.79 1102.03 1083.27 1037.41C1097.75 972.796 1131.32 914.024 1179.62 868.728C1227.93 823.431 1288.73 793.702 1354.15 783.401C1419.56 773.1 1486.56 782.702 1546.45 810.96C1606.34 839.219 1656.35 884.829 1689.98 941.869C1723.62 998.909 1739.34 1064.74 1735.08 1130.83L1405.52 1109.63L1405.52 1439.87Z" data-figma-gradient-fill="{&#34;type&#34;:&#34;GRADIENT_ANGULAR&#34;,&#34;stops&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:1.0}],&#34;transform&#34;:{&#34;m00&#34;:660.48883056640625,&#34;m01&#34;:-5.7741766795516014e-05,&#34;m02&#34;:1075.276855468750,&#34;m10&#34;:5.7741766795516014e-05,&#34;m11&#34;:660.48883056640625,&#34;m12&#34;:779.38073730468750},&#34;opacity&#34;:1.0,&#34;blendMode&#34;:&#34;NORMAL&#34;,&#34;stopsVar&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:1.0}],&#34;visible&#34;:true}"/>
+<line x1="1570.64" y1="1439.87" x2="1570.64" y2="1109.63" stroke="#494949" stroke-width="330.244"/>
+<g clip-path="url(#paint2_angular_114_27128_clip_path)" data-figma-skip-parse="true"><g transform="matrix(-0.330244 0 0 -0.330244 2283.46 1108.8)"><foreignObject x="-1004.29" y="-1004.29" width="2008.58" height="2008.58"><div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(73, 73, 73, 0) 0deg,rgba(73, 73, 73, 1) 89.244deg,rgba(73, 73, 73, 1) 89.28deg,rgba(73, 73, 73, 0.75) 178.208deg,rgba(73, 73, 73, 0) 178.816deg,rgba(73, 73, 73, 1) 360deg);height:100%;width:100%;opacity:1"></div></foreignObject></g></g><path d="M1953.21 778.552H2283.46C2465.85 778.552 2613.7 926.407 2613.7 1108.8V1439.04H2283.46C2101.07 1439.04 1953.21 1291.19 1953.21 1108.8V778.552Z" data-figma-gradient-fill="{&#34;type&#34;:&#34;GRADIENT_ANGULAR&#34;,&#34;stops&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.24789987504482269},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.24799987673759460},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.74999994039535522},&#34;position&#34;:0.49502235651016235},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.0},&#34;position&#34;:0.49671196937561035},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:1.0}],&#34;transform&#34;:{&#34;m00&#34;:-660.48889160156250,&#34;m01&#34;:6.9284671316144353e-13,&#34;m02&#34;:2613.7038574218750,&#34;m10&#34;:-7.6617569710543676e-13,&#34;m11&#34;:-660.48889160156250,&#34;m12&#34;:1439.0406494140625},&#34;opacity&#34;:1.0,&#34;blendMode&#34;:&#34;NORMAL&#34;,&#34;stopsVar&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.24789987504482269},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:0.24799987673759460},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.74999994039535522},&#34;position&#34;:0.49502235651016235},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:0.0},&#34;position&#34;:0.49671196937561035},{&#34;color&#34;:{&#34;r&#34;:0.28627452254295349,&#34;g&#34;:0.28627452254295349,&#34;b&#34;:0.28627452254295349,&#34;a&#34;:1.0},&#34;position&#34;:1.0}],&#34;visible&#34;:true}"/>
+<defs>
+<clipPath id="paint0_angular_114_27128_clip_path"><circle cx="528.39" cy="1109.61" r="330.244" transform="rotate(90 528.39 1109.61)"/></clipPath><clipPath id="paint1_angular_114_27128_clip_path"><path d="M1405.52 1439.87C1339.3 1439.87 1274.61 1419.96 1219.85 1382.73C1165.09 1345.5 1122.78 1292.67 1098.42 1231.09C1074.07 1169.51 1068.79 1102.03 1083.27 1037.41C1097.75 972.796 1131.32 914.024 1179.62 868.728C1227.93 823.431 1288.73 793.702 1354.15 783.401C1419.56 773.1 1486.56 782.702 1546.45 810.96C1606.34 839.219 1656.35 884.829 1689.98 941.869C1723.62 998.909 1739.34 1064.74 1735.08 1130.83L1405.52 1109.63L1405.52 1439.87Z"/></clipPath><clipPath id="paint2_angular_114_27128_clip_path"><path d="M1953.21 778.552H2283.46C2465.85 778.552 2613.7 926.407 2613.7 1108.8V1439.04H2283.46C2101.07 1439.04 1953.21 1291.19 1953.21 1108.8V778.552Z"/></clipPath></defs>
+</svg>
+    </h1>
+    <p class="role-line">Product &amp; Brand Designer <span class="role-works">trabalhos para BetMetrica, PlugnPlay e OPA Games.</span></p>
+  </div>
+</header>
+
+<section class="work" id="work">
+  <div class="wrap-wide">
+    <div class="work-grid">
+      <a href="#case-01" class="work-card">
+        <div class="work-media"><video class="cover-video" poster="assets/img-01-0852744452.jpg" autoplay loop muted playsinline preload="auto"><source src="assets/video-02-6a90dc923b.webm" type="video/webm"><source src="assets/video-03-b92505948c.mp4" type="video/mp4"></video></div>
+        <div class="work-meta-row"><span class="tag">Produto</span><span class="tag">Marca</span><span class="tag">Landing page</span><span class="tag">2024</span></div>
+        <h3 class="work-title">BetMetrica</h3>
+        <p class="work-desc">Dashboard analítico que substituiu o Power BI, com jornada unificada e sistema de permissões pra crescer em clientes sem crescer em custo.</p>
+      </a>
+
+      <a href="#case-02" class="work-card">
+        <div class="work-media"><video class="cover-video" poster="assets/img-04-bad7711d0e.jpg" autoplay loop muted playsinline preload="auto"><source src="assets/video-05-55c4a09751.webm" type="video/webm"><source src="assets/video-06-cb3b349b45.mp4" type="video/mp4"></video></div>
+        <div class="work-meta-row"><span class="tag">Produto</span><span class="tag">B2B</span><span class="tag">Ambiente de teste</span><span class="tag">2025</span></div>
+        <h3 class="work-title">PlugnPlay</h3>
+        <p class="work-desc">Site institucional e ambiente de teste completo pra uma agregadora de jogos de cassino que não tinha nada online.</p>
+      </a>
+
+      <a href="#case-03" class="work-card">
+        <div class="work-media"><video class="cover-video" poster="assets/img-07-938b903b45.jpg" autoplay loop muted playsinline preload="auto"><source src="assets/video-08-195171336b.webm" type="video/webm"><source src="assets/video-09-b438ceea33.mp4" type="video/mp4"></video></div>
+        <div class="work-meta-row"><span class="tag">Direção de arte</span><span class="tag">Impresso</span><span class="tag">2025</span></div>
+        <h3 class="work-title">Catálogo OPA Games</h3>
+        <p class="work-desc">Catálogo físico de 32 páginas pra vendas em feira. O palpável contra a fricção de apresentar pelo celular ou notebook.</p>
+      </a>
+
+      <!-- Site institucional OPA Games, Feedback 360 e Grupo Platforme ficam
+           ocultos por pedido do usuário: removidos do grid, mas as seções de
+           case (mais abaixo) continuam no HTML, só não são mais alcançáveis
+           pela navegação normal. -->
+
+      <!-- Random fica oculto por pedido do usuário (03/10/2026): a seção de
+           case (case-09, mais abaixo) continua no HTML, só não é mais
+           alcançável pela navegação normal. -->
+
+      <!-- BSA fica oculto pelo mesmo motivo. -->
+
+      <!-- River Style fica oculto: o case descrevia erroneamente a criação de
+           estampas como parte do trabalho — essa criação de estampa foi pra
+           outra empresa, a Random (ver case 09). O texto do case 07 já foi
+           corrigido pra refletir só o que foi feito de fato (Instagram +
+           catálogo), e ele fica no HTML caso volte a ser usado. -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 01 — BETMETRICA ============ -->
+<section class="case" id="case-01">
+  <div class="case-cover">
+    <img loading="lazy" decoding="async" src="assets/img-10-6bad3d1179.jpg" alt="Capa do case BetMetrica" />
+  </div>
+  <div class="wrap">
+    <a class="case-home-link" href="#hero">← Trabalhos</a>
+
+    <div class="case-head">
+      <p class="case-eyebrow">Case 01 — SaaS analítico</p>
+      <h2>BetMetrica cresce sem aumentar custo</h2>
+      <p class="case-subtitle">Dashboard analítico pra cassino online, redesenhado pra crescer sem o custo escalar junto e sem vazar dado sensível.</p>
+      <div class="meta-row">
+        <span class="m-role"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="5.5" width="12" height="8" rx="1.2"/><path d="M6 5.5V4a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1.5"/><path d="M2 9h12"/></svg>Papel: produto + marca + landing page</span>
+        <span class="m-platform"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="8" rx="1"/><path d="M6 13.5h4M8 11v2.5"/></svg>Plataforma: desktop &amp; mobile</span>
+        <span class="m-sector"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8.5 2H13a1 1 0 0 1 1 1v4.5a1 1 0 0 1-.3.7l-6 6a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 .7-.3z"/><circle cx="10.5" cy="5.5" r="0.9" fill="currentColor" stroke="none"/></svg>Setor: iGaming / compliance</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <p class="field-label">Contexto</p>
+      <div class="field">
+        <p>BetMetrica é um dashboard em tempo real pra plataformas de cassino online. CEOs, compliance e gerentes de operação usam ele pra acompanhar histórico, entender o que acontece na plataforma e definir novas metodologias. O produto é dividido em módulos, que vão do relatório executivo e do detalhamento de cassino e apostas esportivas até a decomposição de métricas, a aquisição de usuários, o financeiro e o CRM, cada um atendendo uma parte diferente da operação. A primeira versão rodava inteira sobre Power BI, e era essa mesma estrutura que se vendia ao cliente.</p>
+      </div>
+
+      <p class="field-label">Problema</p>
+      <div class="field">
+        <p><b>Negócio:</b> crescer em clientes significava crescer em acessos, e o custo escalava junto. O modelo também não dava pra vender em partes, porque o Power BI não deixava controlar permissão de forma granular.</p>
+        <p><b>Usuário:</b> o sistema era difícil de filtrar e cruzar dado. A jornada vivia fragmentada em subtelas que deveriam estar juntas. E dado sensível, financeiro por exemplo, ficava visível pra qualquer pessoa com acesso ao painel. O Power BI também não tinha versão mobile, então acompanhar os números fora do computador simplesmente não era possível.</p>
+      </div>
+
+      <p class="field-label">Solução</p>
+      <div class="field">
+        <p>Trocamos o Power BI por uma estrutura própria, com jornada unificada e múltiplos formatos de exportação. No centro de tudo ficou um sistema de permissões que só mostra pra cada time as telas que fazem sentido pra ele, como CRM pro marketing e dados financeiros pro financeiro. Desenhamos também uma versão mobile, que não existia antes, pra acompanhar as métricas de qualquer lugar. Isso resolveu a fragmentação, fechou o vazamento de dado sensível, destravou o acesso fora do desktop e abriu espaço pra vender o produto em módulos separados.</p>
+      </div>
+
+      <p class="field-label">Processo</p>
+      <div class="field">
+        <p>Começou com um teste de usabilidade no sistema antigo em Power BI. Foi ali que a jornada fragmentada e a falta de segurança de dado apareceram com clareza. As soluções propostas passaram por teste A/B antes de virar padrão. O desenho foi de ponta a ponta, do sistema de componentes até o próprio sistema de permissões.</p>
+      </div>
+
+      <p class="field-label">Resultado</p>
+      <div class="field">
+        <p>A base de clientes cresceu de 2 para 6 desde o lançamento, com mais usuários ativos, e o custo parou de escalar junto com o número de acessos. Isso resolveu o problema de unit economics que travava o crescimento. O sistema de permissões também resolveu o ponto de segurança que preocupava o time.</p>
+      </div>
+
+      <p class="field-label">Meu papel</p>
+      <div class="field">
+        <p>Toquei o projeto ponta a ponta, da pesquisa, incluindo o teste de usabilidade no sistema antigo, passando pelo teste A/B e o design do componente à interface final, até o sistema de permissões. Também criei a identidade de marca do BetMetrica, com logo e manual de marca, o material comercial usado em feira e uma landing page do produto.</p>
+      </div>
+
+      <div class="exhibits">
+        <div class="slide-carousel" data-carousel>
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <div class="carousel-slide is-active" data-caption="<b>Capa.</b> Página de abertura do material comercial do BetMetrica, usado em apresentação a cliente e em feira.">
+                <img loading="lazy" decoding="async" src="assets/img-11-6b50043960.jpg" alt="Capa do material comercial BetMetrica: 'Speed and Clarity for your Decisions'" />
+              </div>
+              <div class="carousel-slide" data-caption="<b>Main Report.</b> Visão executiva consolidada: Casino, Sportsbook, Aquisição e Pagamento numa tela só, com o dado em tempo real de que fala a solução.">
+                <img loading="lazy" decoding="async" src="assets/img-12-9979a70a35.jpg" alt="Página Main Report do material comercial, com KPIs consolidados e gráficos de GGR e turnover" />
+              </div>
+              <div class="carousel-slide" data-caption="<b>Casino Detailing.</b> Um dos módulos citados no contexto: detalhamento de cassino por usuário, jogo e provedor.">
+                <img loading="lazy" decoding="async" src="assets/img-13-b029266396.jpg" alt="Página Casino Detailing do material comercial, com analytics por usuário, jogo e provedor" />
+              </div>
+              <div class="carousel-slide" data-caption="<b>CRM.</b> Outro módulo do produto: comportamento e engajamento de jogador, a tela que o time de marketing usa.">
+                <img loading="lazy" decoding="async" src="assets/img-14-c6492b4fcd.jpg" alt="Página CRM do material comercial, com insights de jogador e distribuição geográfica" />
+              </div>
+            </div>
+            <button type="button" class="flipbook-nav prev" data-carousel-prev aria-label="Slide anterior">‹</button>
+            <button type="button" class="flipbook-nav next" data-carousel-next aria-label="Próximo slide">›</button>
+          </div>
+          <div class="carousel-dots" data-carousel-dots></div>
+          <div class="flipbook-foot">
+            <p class="flipbook-caption" data-carousel-caption><b>Capa.</b> Página de abertura do material comercial do BetMetrica, usado em apresentação a cliente e em feira.</p>
+            <span class="flipbook-count" data-carousel-count>01 / 04</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="field-label">Telas do produto</p>
+      <div class="field">
+        <p>Da landing page de captação até o produto em uso: visão executiva e o sistema de permissões que controla quem vê o quê.</p>
+      </div>
+
+      <div class="exhibit-grid">
+        <button type="button" class="exhibit-card" data-caption="<b>Landing page.</b> Site de apresentação do produto pra geração de lead, com a mesma identidade visual do material comercial — desktop e mobile.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">betmetrica.com</span></div>
+            <img src="assets/img-15-98c0163616.jpg" alt="Landing page do produto BetMetrica, com identidade visual aplicada do topo ao rodapé" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Landing page.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Main Report.</b> A visão executiva em uso de verdade: Casino, Sportsbook, Aquisição e Financeiro numa tela só, responsiva pra desktop e mobile.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">app.betmetrica.com / main-report</span></div>
+            <img src="assets/img-16-4e44ed0406.jpg" alt="Tela real do Main Report do BetMetrica, com KPIs de Casino, Sportsbook, Aquisição e Financeiro" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Main Report.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Gestão de usuários.</b> A tela por trás do sistema de permissões citado na solução: controle de acesso e status de cada usuário da plataforma.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">app.betmetrica.com / users</span></div>
+            <img src="assets/img-17-3c48345fb1.jpg" alt="Tela de gestão de usuários do BetMetrica, com lista de usuários, status de acesso e paginação" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Gestão de usuários.</b></p>
+        </button>
+      </div>
+
+      <div class="figma-embed-block" data-figma-block>
+        <p class="field-label">Arquivo no Figma</p>
+        <div class="field">
+          <p>O arquivo de trabalho do projeto, aberto pra explorar: identidade de marca, flyer, telas de login, relatório principal e landing page.</p>
+        </div>
+
+        <div class="exhibits">
+          <div class="figma-embed" data-figma-embed>
+            <div class="console-frame">
+              <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">figma.com / Lucas Paz / Bet Metrica</span></div>
+              <div class="figma-embed-stage">
+                <iframe title="Arquivo do BetMetrica no Figma" data-src="https://embed.figma.com/design/oBELtggoZr40bHNrJUZeIl/Lucas-Paz?node-id=12-82&amp;embed-host=pazlucas&amp;footer=false&amp;page-selector=false&amp;viewport-controls=true&amp;theme=light" loading="lazy" allowfullscreen></iframe>
+                <button type="button" class="figma-embed-guard" aria-label="Explorar o arquivo no Figma"><span>Clique para explorar</span></button>
+              </div>
+            </div>
+            <p class="exhibit-cap"><b>Figma.</b> Clique pra explorar: arraste pra navegar e use o zoom.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 02 — PLUGNPLAY ============ -->
+<section class="case" id="case-02">
+  <div class="case-cover">
+    <img loading="lazy" decoding="async" src="assets/img-18-40fcbce22c.jpg" alt="Capa do case PlugnPlay" />
+  </div>
+  <div class="wrap">
+    <a class="case-home-link" href="#hero">← Trabalhos</a>
+
+    <div class="case-head">
+      <p class="case-eyebrow">Case 02 — Plataforma B2B</p>
+      <h2>PlugnPlay sai do zero pra presença digital</h2>
+      <p class="case-subtitle">Site institucional, ambiente de teste e backoffice pra uma operadora B2B que ainda não tinha presença digital nenhuma.</p>
+      <div class="meta-row">
+        <span class="m-role"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="5.5" width="12" height="8" rx="1.2"/><path d="M6 5.5V4a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1.5"/><path d="M2 9h12"/></svg>Papel: site institucional + ambiente de teste + backoffice</span>
+        <span class="m-platform"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="8" rx="1"/><path d="M6 13.5h4M8 11v2.5"/></svg>Plataforma: desktop &amp; mobile</span>
+        <span class="m-sector"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8.5 2H13a1 1 0 0 1 1 1v4.5a1 1 0 0 1-.3.7l-6 6a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 .7-.3z"/><circle cx="10.5" cy="5.5" r="0.9" fill="currentColor" stroke="none"/></svg>Setor: iGaming B2B</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <p class="field-label">Contexto</p>
+      <div class="field">
+        <p>A PlugnPlay é uma plataforma de agregação iGaming: reúne o catálogo de mais de 25 provedores, incluindo nomes como Evolution, Pragmatic Play, NetEnt e Playtech, numa integração única, e revende esse pacote pra outras operadoras de cassino. Quando entrei, a empresa não tinha nada online, nem site. Resolvi duas pontas: um site pra apresentar a empresa pro público, e uma área de teste pra quem já tava perto de fechar contrato experimentar os jogos antes de assinar.</p>
+      </div>
+
+      <p class="field-label">Problema</p>
+      <div class="field">
+        <p><b>Negócio:</b> sem nada online, fechar negócio dependia só do contato comercial direto. Não tinha como mostrar o catálogo de jogos ou passar confiança antes disso.</p>
+        <p><b>Usuário:</b> os clientes B2B precisavam de um jeito confiável de checar se um jogo específico estava no pacote, testar como ele funcionava e validar idioma e moeda antes de assinar.</p>
+      </div>
+
+      <p class="field-label">Solução</p>
+      <div class="field">
+        <p>Além do site institucional, desenhei um ambiente de teste no mesmo formato de um cassino online de verdade, o ambiente que o cliente final veria depois. Ele tem filtro por provedor, jogo e estúdio, registro detalhado de cada jogada (onde e quando o usuário clicou), e um mini backoffice com troca de idioma, moeda e histórico de jogadas pra validação.</p>
+      </div>
+
+      <p class="field-label">Processo</p>
+      <div class="field">
+        <p>Comecei com uma pesquisa de contexto pra entender como as empresas avaliavam e fechavam negócio sem nada online. Depois desenhei toda a interface, da vitrine pública ao uso interno, incluindo o mini backoffice e as ferramentas de verificação de jogadas.</p>
+      </div>
+
+      <p class="field-label">Resultado</p>
+      <div class="field">
+        <p>Com o ambiente de teste no ar, os negócios fecharam mais rápido e os clientes levaram menos tempo pra decidir. De quebra, ele passou a pegar erro de integração antes de virar problema. Ninguém pediu isso, mas o time não larga mais.</p>
+      </div>
+
+      <p class="field-label">Meu papel</p>
+      <div class="field">
+        <p>Criei cada interface, do site institucional, que é a vitrine pública, ao ambiente de teste completo, de uso interno e acessado por empresas em negociação avançada, incluindo o mini backoffice.</p>
+      </div>
+
+      <div class="exhibit-grid">
+        <button type="button" class="exhibit-card" data-caption="<b>Hero do site institucional.</b> Abre mostrando o contexto de negócio: a vitrine pública que não existia antes.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">plugandplay.io</span></div>
+            <img src="assets/img-19-1df28d378d.jpg" data-full-src="assets/img-20-a6ee9256ba.jpg" alt="Hero do site institucional PlugnPlay, One API. Unlimited Entertainment." loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Hero do site institucional.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Home do ambiente de teste.</b> A transição pro produto funcional. Mostra os filtros citados no problema e na solução.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">test-env.plugandplay.io / home</span></div>
+            <img src="assets/img-21-fdabe6d655.jpg" data-full-src="assets/img-22-5a1cdb5931.jpg" alt="Home do ambiente de teste com busca e filtros por provedor" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Home do ambiente de teste.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Modal “Mines Futebol”.</b> O ponto mais específico do case: o registro literal de onde e quando o usuário clicou.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">test-env / game-history / mines-futebol</span></div>
+            <img src="assets/img-23-a4bb571beb.jpg" data-full-src="assets/img-24-958e6d3569.jpg" alt="Modal de detalhe da jogada Mines Futebol, com registro rodada a rodada" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Modal “Mines Futebol”.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Versão para feira.</b> Outra roupagem do mesmo ambiente, adaptada pra demonstração rápida em estande e eventos comerciais.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">demo.plugandplay.io / feira</span></div>
+            <img src="assets/img-25-be6783952c.jpg" data-full-src="assets/img-26-f36b4c3992.jpg" alt="Versão do ambiente de teste adaptada para demonstração em feira, com carrossel de destaque" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Versão para feira.</b></p>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 03 — OPA GAMES ============ -->
+<section class="case" id="case-03">
+  <div class="case-cover">
+    <img loading="lazy" decoding="async" src="assets/img-07-938b903b45.jpg" alt="Capa do catálogo OPA Games, logo em fundo escuro com mapa-múndi estilizado" />
+  </div>
+  <div class="wrap">
+    <a class="case-home-link" href="#hero">← Trabalhos</a>
+
+    <div class="case-head">
+      <p class="case-eyebrow">Case 03 — Material físico</p>
+      <h2>O catálogo da OPA Games aposta no palpável contra o notebook</h2>
+      <p class="case-subtitle">Catálogo impresso de 32 páginas pra apresentar os jogos da OPA Games em feiras, onde wifi instável deixa o digital pra trás.</p>
+      <div class="meta-row">
+        <span class="m-role"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="5.5" width="12" height="8" rx="1.2"/><path d="M6 5.5V4a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1.5"/><path d="M2 9h12"/></svg>Papel: pesquisa + direção de arte + diagramação + produção gráfica</span>
+        <span class="m-format"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="10" rx="1"/><circle cx="5.5" cy="6.5" r="1"/><path d="M14 10l-3.5-3.5L6 11"/></svg>Formato: impresso, 32 páginas</span>
+        <span class="m-sector"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8.5 2H13a1 1 0 0 1 1 1v4.5a1 1 0 0 1-.3.7l-6 6a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 .7-.3z"/><circle cx="10.5" cy="5.5" r="0.9" fill="currentColor" stroke="none"/></svg>Setor: iGaming / vendas em feira</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <p class="field-label">Contexto</p>
+      <div class="field">
+        <p>Catálogo físico impresso dos jogos da OPA Games, pensado pra apresentação em feiras e encontros comerciais rápidos, de um estande a uma reunião informal ou até uma conversa de restaurante, com clientes em potencial, boa parte CEOs de agregadoras e cassinos.</p>
+      </div>
+
+      <p class="field-label">Problema</p>
+      <div class="field">
+        <p>Antes, a apresentação era feita por celular ou notebook. Isso obrigava o cliente a parar, sentar e prestar atenção total enquanto outra pessoa abria e conduzia a apresentação. Fricção logo no primeiro contato, bem no momento mais rápido e informal, tipo um estande de feira ou um encontro de minutos.</p>
+      </div>
+
+      <p class="field-label">Solução</p>
+      <div class="field">
+        <p>Um catálogo físico entregue direto na mão do cliente, que passa a folhear no próprio ritmo, sem depender de alguém mexendo no celular por ele. A hierarquia visual prioriza a arte de cada jogo pra chamar atenção primeiro. Os detalhes técnicos vêm depois.</p>
+      </div>
+
+      <p class="field-label">Processo</p>
+      <div class="field">
+        <p>Comecei pesquisando o contexto real de uso, como e onde a apresentação de fato acontecia, pra então definir formato, tamanho e organização das informações. A partir daí entrei na direção de arte, diagramação e produção gráfica do material inteiro, incluindo recriar cada tela de jogo em página, a partir do material gráfico que já existia.</p>
+      </div>
+
+      <p class="field-label">Resultado</p>
+      <div class="field">
+        <p>Feedback muito positivo do time comercial, principalmente pela facilidade de uso. O catálogo passou a ser distribuído pra empresas de interesse, e o cliente levava o material com ele depois do encontro. A apresentação passou a durar além do momento do pitch.</p>
+      </div>
+
+      <p class="field-label">Meu papel</p>
+      <div class="field">
+        <p>Toquei o projeto inteiro, da pesquisa de contexto de uso à direção de arte, diagramação e produção gráfica.</p>
+      </div>
+
+      <!-- Grade "Páginas do catálogo" (8 páginas soltas): oculta a pedido,
+           mesmo esquema do flipbook logo abaixo — fica intacta dentro de um
+           <template> pra poder voltar no futuro, sem precisar refazer nada.
+           Pra reativar: troque a tag <template ...> por <div> (e feche com
+           </div> em vez de </template>) logo abaixo. -->
+      <template data-hidden-component="paginas-catalogo-grid">
+      <p class="field-label">Páginas do catálogo</p>
+      <div class="field">
+        <p>Recorte de algumas páginas do material impresso de 32 páginas: abertura, a seção sobre a empresa e os spreads de três jogos (Pyramids, AviaTurbo e Trevor Mines).</p>
+      </div>
+
+      <div class="exhibit-grid">
+        <button type="button" class="exhibit-card" data-caption="<b>Abertura.</b> Página 2 do catálogo: tagline e QR code para o site.">
+          <div class="console-frame">
+            <img data-src-ref="flipbook-img-28" alt="Página 2 do catálogo OPA Games: tagline e QR code para o site" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Abertura.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Sobre a empresa.</b> Página 3 do catálogo: a seção institucional sobre a OPA Games.">
+          <div class="console-frame">
+            <img data-src-ref="flipbook-img-29" alt="Página 3 do catálogo OPA Games: seção sobre a empresa" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Sobre a empresa.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Pyramids — abertura.</b> Página 16 do catálogo: abertura do jogo Pyramids.">
+          <div class="console-frame">
+            <img data-src-ref="flipbook-img-30" alt="Página 16 do catálogo OPA Games: abertura do jogo Pyramids" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Pyramids — abertura.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Pyramids — specs.</b> Página 17 do catálogo: especificações técnicas do jogo Pyramids.">
+          <div class="console-frame">
+            <img data-src-ref="flipbook-img-31" alt="Página 17 do catálogo OPA Games: especificações técnicas do jogo Pyramids" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Pyramids — specs.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>AviaTurbo — abertura.</b> Página 18 do catálogo: abertura do jogo AviaTurbo.">
+          <div class="console-frame">
+            <img data-src-ref="flipbook-img-32" alt="Página 18 do catálogo OPA Games: abertura do jogo AviaTurbo" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>AviaTurbo — abertura.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>AviaTurbo — specs.</b> Página 19 do catálogo: especificações técnicas do jogo AviaTurbo.">
+          <div class="console-frame">
+            <img data-src-ref="flipbook-img-33" alt="Página 19 do catálogo OPA Games: especificações técnicas do jogo AviaTurbo" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>AviaTurbo — specs.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Trevor Mines — abertura.</b> Página 22 do catálogo: abertura do jogo Trevor Mines.">
+          <div class="console-frame">
+            <img data-src-ref="flipbook-img-34" alt="Página 22 do catálogo OPA Games: abertura do jogo Trevor Mines" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Trevor Mines — abertura.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Trevor Mines — specs.</b> Página 23 do catálogo: especificações técnicas do jogo Trevor Mines.">
+          <div class="console-frame">
+            <img data-src-ref="flipbook-img-35" alt="Página 23 do catálogo OPA Games: especificações técnicas do jogo Trevor Mines" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Trevor Mines — specs.</b></p>
+        </button>
+      </div>
+      </template>
+
+      <div class="exhibits">
+        <div class="flipbook" data-flipbook>
+          <p class="flipbook-tab" data-flipbook-tab>P. 01 / 32</p>
+          <div class="flipbook-shell">
+            <div class="flipbook-stage">
+              <div class="flipbook-spine" aria-hidden="true"></div>
+
+              <div class="flipbook-page" data-tab="P. 01 / 32">
+                <div class="flipbook-face face-front">
+                  <div class="flipbook-spread-imgs">
+                    <div class="flipbook-page-slot">
+                      <img loading="lazy" decoding="async" src="assets/img-07-938b903b45.jpg" alt="Capa do catálogo OPA Games, logo em fundo escuro com mapa-múndi estilizado" />
+                    </div>
+                  </div>
+                </div>
+                <div class="flipbook-face face-back"></div>
+              </div>
+
+              <!-- Páginas reais do catálogo impresso (recortes do PDF de 32
+                   páginas): abertura (tagline + QR) e a página "sobre a
+                   empresa". -->
+              <div class="flipbook-page" data-tab="P. 02-03 / 32" data-spread="true">
+                <div class="flipbook-face face-front">
+                  <div class="flipbook-spread-imgs">
+                    <div class="flipbook-page-slot">
+                      <img loading="lazy" decoding="async" id="flipbook-img-28" src="assets/img-27-f947f5bada.jpg" alt="Página 2 do catálogo OPA Games: tagline e QR code para o site" />
+                    </div>
+                    <div class="flipbook-page-slot">
+                      <!-- página 17, parada, por baixo da que vai virar —
+                           revelada aos poucos pela perspectiva 3D conforme
+                           a página 3 gira, antes mesmo da virada terminar. -->
+                      <div class="flipbook-slot-next" role="img" aria-label="Página 17 do catálogo OPA Games: especificações técnicas do jogo Pyramids" style="background-image:url(assets/img-28-a390c5c410.jpg)"></div>
+                      <div class="flipbook-slot-flip">
+                        <img loading="lazy" decoding="async" id="flipbook-img-29" src="assets/img-29-8690735bd8.jpg" alt="Página 3 do catálogo OPA Games: seção sobre a empresa" />
+                        <!-- verso da página 3 ao virar: como num livro de
+                             verdade, o verso já mostra a próxima página
+                             (16) — a mesma que fica à esquerda do próximo
+                             spread — pra parecer realmente um folhear.
+                             rotateY(180deg) em torno do próprio centro (ver
+                             CSS) já basta pra orientação correta da arte. -->
+                        <div class="flipbook-slot-back" role="img" aria-label="Página 16 do catálogo OPA Games: abertura do jogo Pyramids">
+                          <div class="flipbook-slot-back-img" style="background-image:url(assets/img-30-da1b540189.jpg)"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flipbook-face face-back"></div>
+              </div>
+
+              <!-- Spread de um jogo de verdade (Pyramids): página de
+                   abertura + página de especificações técnicas. -->
+              <div class="flipbook-page" data-tab="P. 16-17 / 32" data-spread="true">
+                <div class="flipbook-face face-front">
+                  <div class="flipbook-spread-imgs">
+                    <div class="flipbook-page-slot">
+                      <img loading="lazy" decoding="async" id="flipbook-img-30" src="assets/img-31-02216cd76f.jpg" alt="Página 16 do catálogo OPA Games: abertura do jogo Pyramids" />
+                    </div>
+                    <div class="flipbook-page-slot">
+                      <!-- página 19 (AviaTurbo specs), parada, revelada aos
+                           poucos conforme a página 17 gira. -->
+                      <div class="flipbook-slot-next" role="img" aria-label="Página 19 do catálogo OPA Games: especificações técnicas do jogo AviaTurbo" style="background-image:url(assets/img-32-6252ea1e18.jpg)"></div>
+                      <div class="flipbook-slot-flip">
+                        <img loading="lazy" decoding="async" id="flipbook-img-31" src="assets/img-33-50752b1495.jpg" alt="Página 17 do catálogo OPA Games: especificações técnicas do jogo Pyramids" />
+                        <div class="flipbook-slot-back" role="img" aria-label="Página 18 do catálogo OPA Games: abertura do jogo AviaTurbo">
+                          <div class="flipbook-slot-back-img" style="background-image:url(assets/img-34-16d42139ac.jpg)"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flipbook-face face-back"></div>
+              </div>
+
+              <!-- Spread de um jogo de verdade (AviaTurbo): página de
+                   abertura + página de especificações técnicas. -->
+              <div class="flipbook-page" data-tab="P. 18-19 / 32" data-spread="true">
+                <div class="flipbook-face face-front">
+                  <div class="flipbook-spread-imgs">
+                    <div class="flipbook-page-slot">
+                      <img loading="lazy" decoding="async" id="flipbook-img-32" src="assets/img-35-3b17db4771.jpg" alt="Página 18 do catálogo OPA Games: abertura do jogo AviaTurbo" />
+                    </div>
+                    <div class="flipbook-page-slot">
+                      <!-- página 23 (Trevor Mines gameplay/specs), parada,
+                           revelada aos poucos conforme a página 19 gira. -->
+                      <div class="flipbook-slot-next" role="img" aria-label="Página 23 do catálogo OPA Games: especificações técnicas do jogo Trevor Mines" style="background-image:url(assets/img-36-0ec9ceadf3.jpg)"></div>
+                      <div class="flipbook-slot-flip">
+                        <img loading="lazy" decoding="async" id="flipbook-img-33" src="assets/img-37-f38dfbaafa.jpg" alt="Página 19 do catálogo OPA Games: especificações técnicas do jogo AviaTurbo" />
+                        <div class="flipbook-slot-back" role="img" aria-label="Página 22 do catálogo OPA Games: abertura do jogo Trevor Mines">
+                          <div class="flipbook-slot-back-img" style="background-image:url(assets/img-38-4d4c0afea5.jpg)"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flipbook-face face-back"></div>
+              </div>
+
+              <!-- Spread de um jogo de verdade (Trevor Mines): página de
+                   abertura + página de especificações técnicas. Último
+                   spread do catálogo neste flipbook. -->
+              <div class="flipbook-page" data-tab="P. 22-23 / 32" data-spread="true">
+                <div class="flipbook-face face-front">
+                  <div class="flipbook-spread-imgs">
+                    <div class="flipbook-page-slot">
+                      <img loading="lazy" decoding="async" id="flipbook-img-34" src="assets/img-39-dd56e4d39a.jpg" alt="Página 22 do catálogo OPA Games: abertura do jogo Trevor Mines" />
+                    </div>
+                    <div class="flipbook-page-slot">
+                      <div class="flipbook-slot-flip">
+                        <img loading="lazy" decoding="async" id="flipbook-img-35" src="assets/img-40-d508672555.jpg" alt="Página 23 do catálogo OPA Games: especificações técnicas do jogo Trevor Mines" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flipbook-face face-back"></div>
+              </div>
+
+              <button type="button" class="flipbook-nav prev" data-flipbook-prev aria-label="Página anterior">‹</button>
+              <button type="button" class="flipbook-nav next" data-flipbook-next aria-label="Próxima página">›</button>
+            </div>
+          </div>
+          <div class="flipbook-foot">
+            <span class="flipbook-count" data-flipbook-count>01 / 05</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="field-label">Mockup do impresso</p>
+      <div class="field">
+        <p>O catálogo como ele chega na mão do cliente: peça impressa de verdade, não só a página digital.</p>
+      </div>
+
+      <div class="exhibit-grid">
+        <button type="button" class="exhibit-card" data-caption="<b>Capa e lançamentos.</b> Capa fechada do catálogo e o spread de próximos lançamentos (Pirates Mines Livepots e Fortune Frog).">
+          <div class="console-frame">
+            <img src="assets/img-41-ae56b3345d.jpg" alt="Mockup do catálogo impresso OPA Games: capa fechada ao lado do spread com os jogos Pirates Mines Livepots e Fortune Frog" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Capa e lançamentos.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Abertura.</b> Spread de abertura do catálogo impresso: tagline com QR code e a página Sobre Nós.">
+          <div class="console-frame">
+            <img src="assets/img-42-b401e245f3.jpg" alt="Mockup do catálogo impresso OPA Games aberto no spread de abertura, com tagline, QR code e a página Sobre Nós" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Abertura.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Pyramids.</b> Spread do jogo Pyramids impresso: abertura e especificações técnicas lado a lado.">
+          <div class="console-frame">
+            <img src="assets/img-43-3d24f02992.jpg" alt="Mockup do catálogo impresso OPA Games aberto no spread do jogo Pyramids, com abertura e especificações técnicas" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Pyramids.</b></p>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 04 — SITE INSTITUCIONAL OPA GAMES ============ -->
+<section class="case" id="case-04">
+  <div class="case-cover">
+    <img loading="lazy" decoding="async" src="assets/img-04-bad7711d0e.jpg" alt="Site institucional OPA Games" />
+  </div>
+  <div class="wrap">
+    <a class="case-home-link" href="#hero">← Trabalhos</a>
+
+    <div class="case-head">
+      <p class="case-eyebrow">Case 04 — Produto &amp; marca</p>
+      <h2>OPA Games ganha dois sites pra resolver um problema só</h2>
+      <p class="case-subtitle">Dois sites completos e diferentes entre si: um pra navegação com calma, outro pra funcionar rápido direto do estande.</p>
+      <div class="meta-row">
+        <span class="m-role"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="5.5" width="12" height="8" rx="1.2"/><path d="M6 5.5V4a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1.5"/><path d="M2 9h12"/></svg>Papel: produto + marca</span>
+        <span class="m-platform"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="8" rx="1"/><path d="M6 13.5h4M8 11v2.5"/></svg>Plataforma: desktop &amp; mobile</span>
+        <span class="m-sector"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8.5 2H13a1 1 0 0 1 1 1v4.5a1 1 0 0 1-.3.7l-6 6a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 .7-.3z"/><circle cx="10.5" cy="5.5" r="0.9" fill="currentColor" stroke="none"/></svg>Setor: iGaming / vendas em feira</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <p class="field-label">Contexto</p>
+      <div class="field">
+        <p>A OPA Games já tinha o catálogo físico pra apresentação em feira, mas ainda precisava de presença online. Coloquei no ar dois sites completos e diferentes entre si: o principal, com hero em vídeo e catálogo de jogos com página própria por jogo, e uma segunda versão mais compacta, pensada pra navegação rápida direto do estande.</p>
+      </div>
+
+      <p class="field-label">Problema</p>
+      <div class="field">
+        <p><b>Negócio:</b> sem site, o material de vendas ficava só no papel e no contato direto, sem um lugar pra mandar quem quisesse ver o catálogo completo depois do primeiro encontro.</p>
+        <p><b>Usuário:</b> quem queria conhecer os jogos antes ou depois da feira não tinha onde ver com calma, e o gate de idade precisava aparecer antes de qualquer conteúdo de cassino.</p>
+      </div>
+
+      <p class="field-label">Solução</p>
+      <div class="field">
+        <p>O site principal ganhou hero em vídeo, catálogo com página própria por jogo e verificação de idade antes de liberar o conteúdo. A versão compacta corta o que não é essencial, pensada pra funcionar bem num estande, com wifi instável e pouco tempo de atenção.</p>
+      </div>
+
+      <p class="field-label">Processo</p>
+      <div class="field">
+        <p>Levantei o que cada contexto de uso pedia, navegação completa em casa e navegação rápida no estande, e desenhei as duas versões, com hierarquia de conteúdo ajustada pra cada uma e o gate de idade implementado nas duas.</p>
+      </div>
+
+      <p class="field-label">Resultado</p>
+      <div class="field">
+        <p>O site principal passou a converter cerca de 30% dos visitantes em contato comercial. A versão compacta virou o material padrão de apoio em feira, ao lado do catálogo físico.</p>
+      </div>
+
+      <p class="field-label">Meu papel</p>
+      <div class="field">
+        <p>Cuidei do produto e da marca das duas versões, da estrutura e interface ao catálogo por jogo e ao gate de verificação de idade.</p>
+      </div>
+
+      <div class="exhibit-grid">
+        <button type="button" class="exhibit-card" data-caption="<b>Imagem do produto.</b> Espaço reservado — mesma imagem da capa, usada aqui até você enviar um print real do projeto.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">opagames.com</span></div>
+            <img src="assets/img-04-bad7711d0e.jpg" alt="Site institucional OPA Games" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Imagem do produto.</b></p>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 05 — FEEDBACK 360 ============ -->
+<section class="case" id="case-05">
+  <div class="case-cover">
+    <img loading="lazy" decoding="async" src="assets/img-44-49e9afd93c.jpg" alt="Feedback 360" />
+  </div>
+  <div class="wrap">
+    <a class="case-home-link" href="#hero">← Trabalhos</a>
+
+    <div class="case-head">
+      <p class="case-eyebrow">Case 05 — Pesquisa &amp; protótipo</p>
+      <h2>Feedback 360 transforma retorno em reconhecimento</h2>
+      <p class="case-subtitle">Sistema de feedback com mecânica de XP pra transformar retorno entre colegas em reconhecimento de verdade.</p>
+      <div class="meta-row">
+        <span class="m-role"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="5.5" width="12" height="8" rx="1.2"/><path d="M6 5.5V4a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1.5"/><path d="M2 9h12"/></svg>Papel: pesquisa + produto</span>
+        <span class="m-format"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="10" rx="1"/><circle cx="5.5" cy="6.5" r="1"/><path d="M14 10l-3.5-3.5L6 11"/></svg>Formato: protótipo</span>
+        <span class="m-sector"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8.5 2H13a1 1 0 0 1 1 1v4.5a1 1 0 0 1-.3.7l-6 6a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 .7-.3z"/><circle cx="10.5" cy="5.5" r="0.9" fill="currentColor" stroke="none"/></svg>Setor: fora do setor de cassino</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <p class="field-label">Contexto</p>
+      <div class="field">
+        <p>Protótipo de um sistema interno de feedback com gamificação, pensado pra um contexto fora do setor de cassino. A ideia era transformar dar feedback em algo que gera retorno concreto pra quem participa, não só mais um formulário que ninguém preenche.</p>
+      </div>
+
+      <p class="field-label">Problema</p>
+      <div class="field">
+        <p>A pesquisa mapeou três barreiras que travavam esse tipo de iniciativa: falta de participação, falta de motivação pra manter o hábito e falta de clareza sobre o que acontecia com o feedback depois de enviado.</p>
+      </div>
+
+      <p class="field-label">Solução</p>
+      <div class="field">
+        <p>Um sistema onde cada feedback dado gera XP, trocável depois por produtos institucionais. A troca dá um motivo concreto pra participar, e o histórico de XP também mostra pra empresa quem está mais engajado no processo.</p>
+      </div>
+
+      <p class="field-label">Processo</p>
+      <div class="field">
+        <p>Comecei identificando as barreiras reais de participação, desenhei a mecânica de XP e as regras de troca, e prototipei a jornada completa, do envio do feedback até o resgate do produto.</p>
+      </div>
+
+      <p class="field-label">Resultado</p>
+      <div class="field">
+        <p>O projeto ficou pausado por mudança de prioridade antes de ir pra produção, mas a pesquisa e o protótipo ficaram prontos pra retomada, com as três barreiras já mapeadas e uma mecânica de engajamento testada no papel.</p>
+      </div>
+
+      <p class="field-label">Meu papel</p>
+      <div class="field">
+        <p>Fiz a pesquisa completa, desenhei a mecânica de gamificação e prototipei toda a jornada do sistema.</p>
+      </div>
+
+      <div class="exhibit-grid">
+        <button type="button" class="exhibit-card" data-caption="<b>Imagem do produto.</b> Espaço reservado — mesma imagem da capa, usada aqui até você enviar um print real do projeto.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">feedback360 / prototype</span></div>
+            <img src="assets/img-44-49e9afd93c.jpg" alt="Feedback 360" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Imagem do produto.</b></p>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 06 — GRUPO PLATFORME ============ -->
+<section class="case" id="case-06">
+  <div class="case-cover">
+    <img loading="lazy" decoding="async" src="assets/img-45-7674179c73.jpg" alt="Grupo Platforme" />
+  </div>
+  <div class="wrap">
+    <a class="case-home-link" href="#hero">← Trabalhos</a>
+
+    <div class="case-head">
+      <p class="case-eyebrow">Case 06 — Identidade de marca</p>
+      <h2>Grupo Platforme ganha marca pra quem cria dashboards</h2>
+      <p class="case-subtitle">Identidade de marca pra uma empresa que cria dashboards B2B, com logo e manual de aplicação.</p>
+      <div class="meta-row">
+        <span class="m-role"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="5.5" width="12" height="8" rx="1.2"/><path d="M6 5.5V4a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1.5"/><path d="M2 9h12"/></svg>Papel: identidade de marca</span>
+        <span class="m-format"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="10" rx="1"/><circle cx="5.5" cy="6.5" r="1"/><path d="M14 10l-3.5-3.5L6 11"/></svg>Formato: logo + manual de marca</span>
+        <span class="m-sector"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8.5 2H13a1 1 0 0 1 1 1v4.5a1 1 0 0 1-.3.7l-6 6a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 .7-.3z"/><circle cx="10.5" cy="5.5" r="0.9" fill="currentColor" stroke="none"/></svg>Setor: dashboards B2B</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <p class="field-label">Contexto</p>
+      <div class="field">
+        <p>O Grupo Platforme cria soluções em dashboard pra outras empresas, mas ainda não tinha uma identidade visual própria que representasse esse trabalho.</p>
+      </div>
+
+      <p class="field-label">Problema</p>
+      <div class="field">
+        <p>Sem marca definida, a empresa dependia de material genérico pra se apresentar, o que enfraquecia a credibilidade justamente num mercado técnico, onde a marca também comunica confiança.</p>
+      </div>
+
+      <p class="field-label">Solução</p>
+      <div class="field">
+        <p>Uma identidade visual construída em cima do que o grupo já fazia bem: organizar dado de forma clara. O logo e o manual de marca dão consistência pra qualquer material que a empresa produza depois.</p>
+      </div>
+
+      <p class="field-label">Processo</p>
+      <div class="field">
+        <p>Levantei o posicionamento e o público do grupo, e a partir daí desenhei o logo e construí o manual de marca, com regras de uso, cor e aplicação.</p>
+      </div>
+
+      <p class="field-label">Resultado</p>
+      <div class="field">
+        <p>A empresa passou a ter uma identidade própria e consistente pra usar em site, material comercial e apresentações.</p>
+      </div>
+
+      <p class="field-label">Meu papel</p>
+      <div class="field">
+        <p>Toquei todo o projeto de marca, da pesquisa de posicionamento ao logo e manual de marca.</p>
+      </div>
+
+      <div class="exhibit-grid">
+        <button type="button" class="exhibit-card" data-caption="<b>Imagem do produto.</b> Espaço reservado — mesma imagem da capa, usada aqui até você enviar um print real do projeto.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">grupo-platforme / marca</span></div>
+            <img src="assets/img-45-7674179c73.jpg" alt="Grupo Platforme" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Imagem do produto.</b></p>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 07 — RIVER STYLE ============ -->
+<section class="case" id="case-07">
+  <div class="case-cover">
+    <img loading="lazy" decoding="async" src="assets/img-46-9f8621f382.jpg" alt="River Style" />
+  </div>
+  <div class="wrap">
+    <a class="case-home-link" href="#hero">← Trabalhos</a>
+
+    <div class="case-head">
+      <p class="case-eyebrow">Case 07 — Moda &amp; social</p>
+      <h2>River Style mantém presença constante no feed</h2>
+      <p class="case-subtitle">Gestão de Instagram e catálogo de coleção pra uma marca de moda que precisava de ritmo constante nas redes.</p>
+      <div class="meta-row">
+        <span class="m-role"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="5.5" width="12" height="8" rx="1.2"/><path d="M6 5.5V4a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1.5"/><path d="M2 9h12"/></svg>Papel: gestão de Instagram + catálogo</span>
+        <span class="m-format"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="10" rx="1"/><circle cx="5.5" cy="6.5" r="1"/><path d="M14 10l-3.5-3.5L6 11"/></svg>Formato: trabalho contínuo</span>
+        <span class="m-sector"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8.5 2H13a1 1 0 0 1 1 1v4.5a1 1 0 0 1-.3.7l-6 6a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 .7-.3z"/><circle cx="10.5" cy="5.5" r="0.9" fill="currentColor" stroke="none"/></svg>Setor: moda</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <p class="field-label">Contexto</p>
+      <div class="field">
+        <p>A River Style precisava manter presença ativa no Instagram e lançar material novo a cada coleção, sem ter estrutura própria de design interna pra isso.</p>
+      </div>
+
+      <p class="field-label">Problema</p>
+      <div class="field">
+        <p><b>Negócio:</b> sem alguém dedicado ao visual, o ritmo de posts caía e cada lançamento de coleção virava correria de última hora pra ter catálogo e material de divulgação prontos.</p>
+        <p><b>Usuário:</b> quem seguia a marca via um feed inconsistente, sem identidade visual clara entre uma coleção e outra.</p>
+      </div>
+
+      <p class="field-label">Solução</p>
+      <div class="field">
+        <p>Atuação recorrente cobrindo o Instagram e o catálogo de produtos de cada coleção, com criativos animados (motion) pros lançamentos.</p>
+      </div>
+
+      <p class="field-label">Processo</p>
+      <div class="field">
+        <p>Mantive uma rotina de criação e aprovação de conteúdo alinhada ao calendário de lançamentos, cuidando do catálogo e do material de divulgação de cada coleção.</p>
+      </div>
+
+      <p class="field-label">Resultado</p>
+      <div class="field">
+        <p>A marca passou a manter um feed consistente e material pronto pra cada lançamento de coleção, sem depender de correria de última hora.</p>
+      </div>
+
+      <p class="field-label">Meu papel</p>
+      <div class="field">
+        <p>Cuidei da gestão de Instagram, do catálogo de coleção, e do motion pros lançamentos.</p>
+      </div>
+
+      <div class="exhibit-grid">
+        <button type="button" class="exhibit-card" data-caption="<b>Imagem do produto.</b> Espaço reservado — mesma imagem da capa, usada aqui até você enviar um print real do projeto.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">river-style / feed</span></div>
+            <img src="assets/img-46-9f8621f382.jpg" alt="River Style" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Imagem do produto.</b></p>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 08 — BSA ============ -->
+<section class="case" id="case-08">
+  <div class="case-cover">
+    <img loading="lazy" decoding="async" src="assets/img-45-7674179c73.jpg" alt="BSA" />
+  </div>
+  <div class="wrap">
+    <a class="case-home-link" href="#hero">← Trabalhos</a>
+
+    <div class="case-head">
+      <p class="case-eyebrow">Case 08 — Design institucional</p>
+      <h2>BSA leva identidade institucional pro dia a dia</h2>
+      <p class="case-subtitle">Direção de arte de material institucional e de evento pra uma empresa sem time de design próprio.</p>
+      <div class="meta-row">
+        <span class="m-role"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="5.5" width="12" height="8" rx="1.2"/><path d="M6 5.5V4a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1.5"/><path d="M2 9h12"/></svg>Papel: direção de arte + produção</span>
+        <span class="m-format"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="10" rx="1"/><circle cx="5.5" cy="6.5" r="1"/><path d="M14 10l-3.5-3.5L6 11"/></svg>Formato: trabalho contínuo</span>
+        <span class="m-sector"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8.5 2H13a1 1 0 0 1 1 1v4.5a1 1 0 0 1-.3.7l-6 6a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 .7-.3z"/><circle cx="10.5" cy="5.5" r="0.9" fill="currentColor" stroke="none"/></svg>Setor: institucional</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <p class="field-label">Contexto</p>
+      <div class="field">
+        <p>A BSA precisava de material institucional recorrente, de post de Instagram a peça física de evento, sem ter estrutura própria de design pra dar conta disso.</p>
+      </div>
+
+      <p class="field-label">Problema</p>
+      <div class="field">
+        <p><b>Negócio:</b> cada evento ou ação institucional demandava material novo, e sem um responsável fixo pelo visual, cada entrega virava um projeto do zero.</p>
+        <p><b>Usuário:</b> o público que acompanhava a empresa não tinha uma identidade visual reconhecível de um material pro outro.</p>
+      </div>
+
+      <p class="field-label">Solução</p>
+      <div class="field">
+        <p>Atuação recorrente cobrindo o Instagram institucional e a direção de arte do material de evento, de camisa a copo e painel de feira, com acompanhamento direto da produção na gráfica até a entrega final.</p>
+      </div>
+
+      <p class="field-label">Processo</p>
+      <div class="field">
+        <p>Mantive uma rotina de criação de conteúdo institucional alinhada ao calendário de eventos, e assinei a direção de arte de cada peça, do briefing ao acompanhamento da produção gráfica.</p>
+      </div>
+
+      <p class="field-label">Resultado</p>
+      <div class="field">
+        <p>A empresa passou a ter material institucional pronto pra cada evento, com identidade visual consistente entre as peças.</p>
+      </div>
+
+      <p class="field-label">Meu papel</p>
+      <div class="field">
+        <p>Cuidei da gestão de Instagram institucional e da direção de arte dos materiais de evento, incluindo o contato direto com a gráfica.</p>
+      </div>
+
+      <div class="exhibit-grid">
+        <button type="button" class="exhibit-card" data-caption="<b>Imagem do produto.</b> Espaço reservado — mesma imagem da capa, usada aqui até você enviar um print real do projeto.">
+          <div class="console-frame">
+            <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">bsa / institucional</span></div>
+            <img src="assets/img-45-7674179c73.jpg" alt="BSA" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Imagem do produto.</b></p>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE 09 — RANDOM ============ -->
+<section class="case" id="case-09">
+  <div class="case-cover">
+    <img loading="lazy" decoding="async" src="assets/img-47-d053b6e449.jpg" alt="Estampa Gearheart da Random" />
+  </div>
+  <div class="wrap">
+    <a class="case-home-link" href="#hero">← Trabalhos</a>
+
+    <div class="case-head">
+      <p class="case-eyebrow">Case 09 — Estamparia &amp; ilustração</p>
+      <h2>Random transforma briefing em estampa pronta pra produção</h2>
+      <p class="case-subtitle">Criação de estampas exclusivas por coleção pra uma marca de vestuário, do conceito criativo à arte final pronta pra impressão na peça.</p>
+      <div class="meta-row">
+        <span class="m-role"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="5.5" width="12" height="8" rx="1.2"/><path d="M6 5.5V4a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1.5"/><path d="M2 9h12"/></svg>Papel: criação de estampas</span>
+        <span class="m-format"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="12" height="10" rx="1"/><circle cx="5.5" cy="6.5" r="1"/><path d="M14 10l-3.5-3.5L6 11"/></svg>Formato: estampas sob encomenda, por coleção</span>
+        <span class="m-sector"><svg class="m-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8.5 2H13a1 1 0 0 1 1 1v4.5a1 1 0 0 1-.3.7l-6 6a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 .7-.3z"/><circle cx="10.5" cy="5.5" r="0.9" fill="currentColor" stroke="none"/></svg>Setor: moda</span>
+      </div>
+    </div>
+
+    <div class="case-body">
+      <p class="field-label">Contexto</p>
+      <div class="field">
+        <p>A Random encomendava estampas exclusivas pra cada coleção de roupa (como a Hendon), a partir de um briefing com o nome da estampa, o conceito criativo e referências visuais.</p>
+      </div>
+
+      <p class="field-label">Problema</p>
+      <div class="field">
+        <p><b>Negócio:</b> cada coleção precisava de estampas com identidade própria, sem repetir fórmula visual de uma coleção pra outra.</p>
+        <p><b>Usuário:</b> quem compra a peça busca um design que converse com o universo daquela coleção, não um gráfico genérico.</p>
+      </div>
+
+      <p class="field-label">Solução</p>
+      <div class="field">
+        <p>A partir do briefing de cada estampa (nome, conceito e referências), desenvolvi a ilustração — boa parte feita direto no Figma — e fechei a arte final no Photoshop, já pronta pra ir pra produção na peça.</p>
+      </div>
+
+      <p class="field-label">Processo</p>
+      <div class="field">
+        <p>Recebia o briefing de cada estampa com nome, conceito criativo e referências, desenvolvia a ilustração a partir disso e finalizava a arte de produção no Photoshop.</p>
+      </div>
+
+      <p class="field-label">Resultado</p>
+      <div class="field">
+        <p>Cada coleção lançou com estampas exclusivas, desenvolvidas do conceito à arte pronta pra impressão na peça.</p>
+      </div>
+
+      <p class="field-label">Meu papel</p>
+      <div class="field">
+        <p>Cuidei da criação das estampas: da leitura do briefing (nome, conceito e referências) à ilustração e arte final, como as 6 estampas da coleção Hendon mostradas abaixo.</p>
+      </div>
+
+      <div class="exhibit-grid">
+        <button type="button" class="exhibit-card" data-caption="<b>Gearheart.</b> Estampa de coleção da Hendon: camiseta preta com ilustração de coração mecânico, frente e costas.">
+          <div class="console-frame">
+            <img src="assets/img-47-d053b6e449.jpg" alt="Mockup de camiseta preta Hendon com estampa Gearheart (coração mecânico) na frente e nas costas" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Gearheart.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Grafite — Highway.</b> Estampa de coleção da Hendon: logotipo repetido em efeito gradiente, camiseta preta.">
+          <div class="console-frame">
+            <img src="assets/img-48-44968564b5.jpg" alt="Mockup de camiseta preta Hendon com estampa tipográfica em gradiente laranja/cinza nas costas" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Grafite — Highway.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Maestro of the Streets.</b> Estampa de coleção da Hendon: colagem retrô com carro, camiseta preta.">
+          <div class="console-frame">
+            <img src="assets/img-49-9b932bb523.jpg" alt="Mockup de camiseta preta Hendon com estampa de colagem retrô 'Maestro of the Streets' nas costas" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Maestro of the Streets.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Highway.</b> Estampa de coleção da Hendon: logotipo em estilo placa de rodovia, camiseta bordô.">
+          <div class="console-frame">
+            <img src="assets/img-50-9e27ce2e18.jpg" alt="Mockup de camiseta bordô Hendon com logotipo em estilo placa de rodovia na frente e nas costas" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Highway.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Japanese Cherry.</b> Estampa de coleção da Hendon: ilustração de carro com cerejeiras, camiseta branca.">
+          <div class="console-frame">
+            <img src="assets/img-51-ee88405928.jpg" alt="Mockup de camiseta branca Hendon com ilustração de carro e cerejeiras japonesas nas costas" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Japanese Cherry.</b></p>
+        </button>
+        <button type="button" class="exhibit-card" data-caption="<b>Wheels.</b> Estampa de coleção da Hendon: rodas formando o nome da marca, camiseta preta e dourada.">
+          <div class="console-frame">
+            <img src="assets/img-52-02f00e5135.jpg" alt="Mockup de camiseta preta Hendon com seis rodas douradas formando o nome da marca nas costas" loading="lazy" />
+          </div>
+          <p class="exhibit-card-cap"><b>Wheels.</b></p>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contato">
+  <div class="wrap-wide">
+    <div class="footer-rule"></div>
+    <div class="footer-top">
+      <p class="sign">Foi bom cruzar esse caminho com você. Espero que tenha deixado um pouco de curiosidade e inspiração.</p>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-label">Contato</p>
+          <a href="mailto:pazlimapaz@gmail.com">pazlimapaz@gmail.com</a>
+          <a href="https://www.linkedin.com/in/limapaz" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="footer-col footer-col-nav">
+          <p class="footer-label">Navegação</p>
+          <a href="#work" data-route="home">Trabalhos</a>
+          <a href="#contato" data-route="home">Contato</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">© Lucas Paz, 2026</div>
+  </div>
+</footer>
+
+<div class="project-cursor" id="projectCursor" aria-hidden="true">Ver projeto</div>
+
+<div class="lightbox" id="lightboxRoot" data-lightbox hidden>
+  <div class="lightbox-panel">
+    <div class="lightbox-header">
+      <p class="lightbox-caption" data-lightbox-caption hidden></p>
+      <button type="button" class="lightbox-close" data-lightbox-close aria-label="Fechar">×</button>
+    </div>
+    <div class="lightbox-stage" data-lightbox-stage>
+      <img data-lightbox-img src="" alt="" />
+      <button type="button" class="lightbox-nav prev" data-lightbox-prev aria-label="Imagem anterior" hidden>‹</button>
+      <button type="button" class="lightbox-nav next" data-lightbox-next aria-label="Próxima imagem" hidden>›</button>
+    </div>
+  </div>
+  <p class="lightbox-hint">Arraste pra mover · role ou pinça pra zoom · duplo clique alterna</p>
+</div>
+
+<script>
+(function () {
+  var cursor = document.getElementById('projectCursor');
+  if (!cursor) return;
+
+  // Em telas de toque não existe mouseenter/mouseleave real: o tap dispara
+  // um mouseenter sintético (mostrando o pill), mas como o link é só uma
+  // âncora (#case-01) sem reload, o mouseleave nunca chega e o pill "Ver
+  // projeto" fica preso na tela. Então esse cursor-follow roda só onde
+  // existe hover de verdade (mouse físico).
+  if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    return;
+  }
+
+  var links = document.querySelectorAll('a.work-card');
+
+  function move(e) {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener('mouseenter', function (e) {
+      cursor.classList.add('is-visible');
+      move(e);
+    });
+    link.addEventListener('mousemove', move);
+    link.addEventListener('mouseleave', function () {
+      cursor.classList.remove('is-visible');
+    });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  // Rede de segurança pro autoplay das capas animadas. O <video autoplay>
+  // nativo às vezes não dispara sozinho — principalmente dentro de um
+  // iframe com sandbox (como o do Artifact publicado) e em navegadores
+  // mobile mais restritivos — mesmo com muted+playsinline. Em vez de trocar
+  // a fonte do vídeo (uma tentativa anterior, via Blob URL, piorou as coisas:
+  // o sandbox do Artifact bloqueia blob: como origem de mídia, então o vídeo
+  // parava de carregar completamente, inclusive no desktop), aqui só se
+  // tenta chamar .play() de novo em alguns gatilhos, sem mexer no <source>.
+  // Chamar .play() num vídeo que já está tocando não tem efeito nenhum —
+  // então isso nunca pode piorar nada, só ajudar nos casos em que o
+  // autoplay nativo não "pegou".
+  var videos = Array.prototype.slice.call(document.querySelectorAll('video.cover-video'));
+  if (!videos.length) return;
+
+  function tryPlay(video) {
+    if (!video.paused) return;
+    var p = video.play();
+    if (p && typeof p.catch === 'function') p.catch(function () { /* ainda bloqueado, tudo bem */ });
+  }
+
+  function tryAll() { videos.forEach(tryPlay); }
+
+  videos.forEach(function (video) {
+    video.addEventListener('loadeddata', function () { tryPlay(video); });
+    video.addEventListener('canplay', function () { tryPlay(video); });
+  });
+
+  // Assim que o card entra na tela (relevante no mobile, onde o usuário
+  // rola até ele em vez de já estar visível no load).
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) tryPlay(entry.target);
+      });
+    }, { threshold: 0.25 });
+    videos.forEach(function (video) { io.observe(video); });
+  }
+
+  // Primeiro toque/clique/scroll do usuário na página — alguns navegadores
+  // só liberam o play() depois de qualquer interação, mesmo com muted.
+  ['touchstart', 'click', 'scroll'].forEach(function (evt) {
+    window.addEventListener(evt, tryAll, { once: true, passive: true });
+  });
+
+  // Rede de segurança final: tenta de novo pouco depois do load, caso o
+  // autoplay nativo tenha demorado a iniciar.
+  window.addEventListener('load', function () { setTimeout(tryAll, 300); });
+})();
+</script>
+
+<script>
+(function () {
+  document.querySelectorAll('[data-flipbook]').forEach(function (root) {
+    var pages = Array.prototype.slice.call(root.querySelectorAll('.flipbook-page'));
+    var totalPages = pages.length;
+    if (!totalPages) return;
+
+    var tabEl = root.querySelector('[data-flipbook-tab]');
+    var captionEl = root.querySelector('[data-flipbook-caption]');
+    var countEl = root.querySelector('[data-flipbook-count]');
+    var prevBtn = root.querySelector('[data-flipbook-prev]');
+    var nextBtn = root.querySelector('[data-flipbook-next]');
+    var stage = root.querySelector('.flipbook-stage');
+
+    // ---- "paradas" de navegação: cada página normal vira 1 parada
+    // ("full" — ocupa o frame inteiro, como a capa); cada página marcada
+    // com data-spread="true" vira 2 paradas (esquerda/direita), simulando
+    // as duas páginas de um spread aberto dentro do mesmo frame.
+    var stops = [];
+    pages.forEach(function (page, pageIndex) {
+      if (page.getAttribute('data-spread') === 'true') {
+        stops.push({ pageIndex: pageIndex, side: 'left' });
+        stops.push({ pageIndex: pageIndex, side: 'right' });
+      } else {
+        stops.push({ pageIndex: pageIndex, side: 'full' });
+      }
+    });
+    var totalStops = stops.length;
+    var stopIndex = 0;
+    var animating = false;
+    var ZOOM_MS = 440;
+    var FLIP_MS = 750; // precisa bater com a transition de .flipbook-page no CSS
+
+    function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+    // o alvo do zoom é o wrapper .flipbook-spread-imgs (contém 1 imagem,
+    // na capa, ou 2 imagens DIFERENTES lado a lado, num spread) — nunca a
+    // imagem em si, porque dar zoom no wrapper amplia só a metade onde já
+    // está a imagem certa, em vez de recortar uma imagem única ao meio.
+    function spreadWrap(pageIndex) {
+      var page = pages[pageIndex];
+      return page ? page.querySelector('.flipbook-face.face-front .flipbook-spread-imgs') : null;
+    }
+
+    function slotsOf(pageIndex) {
+      var page = pages[pageIndex];
+      return page ? Array.prototype.slice.call(page.querySelectorAll('.flipbook-page-slot')) : [];
+    }
+
+    // qual .flipbook-page-slot está em foco numa parada: 'right' usa o
+    // segundo slot quando ele existe (spread de verdade), senão cai no
+    // único slot que existir (capa).
+    function activeSlot(pageIndex, side) {
+      var slots = slotsOf(pageIndex);
+      if (side === 'right' && slots.length > 1) return slots[1];
+      return slots[0] || null;
+    }
+
+    // side: 'left' (zoom na metade esquerda), 'right' (zoom na metade
+    // direita) ou 'full' (sem zoom, spread inteiro visível, as duas
+    // páginas lado a lado). instant=true aplica sem transição (usado assim
+    // que uma página vira, antes de dar zoom pra parada de destino).
+    function applyZoom(wrap, side, instant) {
+      if (!wrap) return;
+      if (instant) wrap.style.transition = 'none';
+      if (side === 'left') {
+        wrap.style.transformOrigin = '0% 50%';
+        wrap.style.transform = 'scale(2)';
+      } else if (side === 'right') {
+        wrap.style.transformOrigin = '100% 50%';
+        wrap.style.transform = 'scale(2)';
+      } else {
+        wrap.style.transformOrigin = '50% 50%';
+        wrap.style.transform = 'scale(1)';
+      }
+      if (instant) {
+        void wrap.offsetWidth;
+        wrap.style.transition = '';
+      }
+    }
+
+    function updateMeta(stop) {
+      var page = pages[stop.pageIndex];
+      var slot = activeSlot(stop.pageIndex, stop.side);
+      var tabText = page.getAttribute('data-tab') || '';
+      if (stop.side === 'left') tabText += ' · pág. esquerda';
+      else if (stop.side === 'right') tabText += ' · pág. direita';
+      if (tabEl) tabEl.textContent = tabText;
+      if (captionEl) captionEl.innerHTML = (slot && slot.getAttribute('data-caption')) || '';
+      if (countEl) countEl.textContent = pad(stopIndex + 1) + ' / ' + pad(totalStops);
+      if (prevBtn) prevBtn.disabled = stopIndex === 0;
+      if (nextBtn) nextBtn.disabled = stopIndex === totalStops - 1;
+    }
+
+    function setFlipClasses(activePageIndex) {
+      pages.forEach(function (page, i) {
+        page.classList.toggle('is-flipped', i < activePageIndex);
+      });
+    }
+
+    // nas páginas de spread (2 imagens lado a lado), quem representa a
+    // virada é só a página da direita (slot :last-child) — ver CSS. Mesma
+    // condição do setFlipClasses, só que aplicada no slot em vez da
+    // .flipbook-page inteira.
+    function setSlotFlip(activePageIndex) {
+      pages.forEach(function (page, i) {
+        if (page.getAttribute('data-spread') !== 'true') return;
+        var slots = slotsOf(i);
+        var rightSlot = slots[slots.length - 1];
+        var turning = i < activePageIndex;
+        var flipEl = rightSlot && rightSlot.querySelector('.flipbook-slot-flip');
+        if (flipEl) flipEl.classList.toggle('is-turning', turning);
+      });
+    }
+
+    // z-index "assentado" (sem virada em andamento): a página do lado certo
+    // do spine fica por cima. elevatedIndex, quando passado, força aquela
+    // página específica pro topo de tudo — usado só durante a virada (ver
+    // doFlipAndZoomIn), pra garantir que a página que está girando fique
+    // visível por cima tanto indo pra frente quanto voltando.
+    function setStacking(activePageIndex, elevatedIndex) {
+      pages.forEach(function (page, i) {
+        if (elevatedIndex != null && i === elevatedIndex) {
+          page.style.zIndex = 2 * totalPages + 10;
+        } else {
+          page.style.zIndex = i < activePageIndex ? i : (2 * totalPages - i);
+        }
+      });
+    }
+
+    // estado inicial (parada 0): sem transição, pra não animar na carga.
+    setFlipClasses(stops[0].pageIndex);
+    setSlotFlip(stops[0].pageIndex);
+    setStacking(stops[0].pageIndex, null);
+    applyZoom(spreadWrap(stops[0].pageIndex), stops[0].side, true);
+    updateMeta(stops[0]);
+
+    function goToStop(target) {
+      if (animating || target < 0 || target > totalStops - 1) return;
+      var from = stops[stopIndex];
+      var to = stops[target];
+      animating = true;
+
+      if (from.pageIndex === to.pageIndex) {
+        // mesmo spread: só arrasta (pan) de uma página pra outra — sem
+        // virar página. transform-origin anima de 0%→100% (ou o contrário)
+        // com o zoom (scale 2) fixo, o que produz o "arrastar pro lado",
+        // saindo de uma imagem e entrando na outra, de verdade.
+        stopIndex = target;
+        updateMeta(to);
+        applyZoom(spreadWrap(to.pageIndex), to.side, false);
+        window.setTimeout(function () { animating = false; }, ZOOM_MS);
+        return;
+      }
+
+      // páginas diferentes: 1) tira o zoom da página atual, se houver
+      // (revela o spread aberto, as duas páginas lado a lado) · 2) vira a
+      // página · 3) a nova página some "aberta" e recebe zoom pra parada
+      // de destino. Se a página atual já estava sem zoom (ex.: a capa),
+      // pula direto pra virada — não há o que "abrir".
+      var needsZoomOut = from.side !== 'full';
+      if (needsZoomOut) applyZoom(spreadWrap(from.pageIndex), 'full', false);
+
+      // a página que efetivamente gira é sempre a que fica na "fronteira"
+      // entre a parada de origem e a de destino — e é sempre a mesma página
+      // física, indo ou voltando (só inverte o sentido da rotação). Ela
+      // precisa ficar por cima de tudo ENQUANTO gira, senão a página vizinha
+      // (que já nasce no z-index final) cobre a virada e ela fica invisível.
+      var boundaryIndex = Math.min(from.pageIndex, to.pageIndex);
+
+      function doFlipAndZoomIn() {
+        stopIndex = target;
+        updateMeta(to);
+        setFlipClasses(to.pageIndex);
+        setSlotFlip(to.pageIndex);
+        setStacking(to.pageIndex, boundaryIndex);
+        var toWrap = spreadWrap(to.pageIndex);
+        // a página revelada começa "aberta" (zoom out) sem transição, pra
+        // já mostrar o spread completo (as duas páginas, lado a lado) assim
+        // que a virada acontecer — e só depois que a virada (750ms) termina
+        // é que ela dá zoom pra parada de destino. Evita o zoom e a virada
+        // acontecendo ao mesmo tempo.
+        applyZoom(toWrap, 'full', true);
+        window.setTimeout(function () {
+          // virada (visualmente) terminou: solta o z-index elevado e
+          // assenta na ordem final, aí sim a página de destino fica por
+          // cima pra valer.
+          setStacking(to.pageIndex, null);
+          applyZoom(toWrap, to.side, false);
+          window.setTimeout(function () { animating = false; }, ZOOM_MS);
+        }, FLIP_MS);
+      }
+
+      if (needsZoomOut) window.setTimeout(doFlipAndZoomIn, ZOOM_MS);
+      else doFlipAndZoomIn();
+    }
+
+    function next() { goToStop(stopIndex + 1); }
+    function prev() { goToStop(stopIndex - 1); }
+
+    if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); prev(); });
+    if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); next(); });
+
+    if (stage) {
+      stage.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft') prev();
+      });
+    }
+  });
+})();
+</script>
+
+<script>
+(function () {
+  // As imagens do catálogo (grade estática "Páginas do catálogo", acima)
+  // reaproveitam os mesmos arquivos já embutidos no flipbook oculto
+  // (dentro do <template data-hidden-component="flipbook-catalogo">), em
+  // vez de duplicar os data URIs no HTML — isso evitaria quase dobrar o
+  // peso do arquivo. Aqui a gente só copia o src já carregado no template
+  // pros <img data-src-ref="..."> correspondentes da grade visível.
+  var hiddenFlipbook = document.querySelector('template[data-hidden-component="flipbook-catalogo"]');
+  if (hiddenFlipbook) {
+    document.querySelectorAll('img[data-src-ref]').forEach(function (img) {
+      var ref = hiddenFlipbook.content.getElementById(img.getAttribute('data-src-ref'));
+      if (ref) img.src = ref.getAttribute('src');
+    });
+  }
+})();
+</script>
+
+<script>
+(function () {
+  document.querySelectorAll('[data-carousel]').forEach(function (root) {
+    var slides = Array.prototype.slice.call(root.querySelectorAll('.carousel-slide'));
+    var total = slides.length;
+    if (!total) return;
+
+    var track = root.querySelector('.carousel-track');
+    var dotsEl = root.querySelector('[data-carousel-dots]');
+    var captionEl = root.querySelector('[data-carousel-caption]');
+    var countEl = root.querySelector('[data-carousel-count]');
+    var prevBtn = root.querySelector('[data-carousel-prev]');
+    var nextBtn = root.querySelector('[data-carousel-next]');
+    var current = 0;
+    var autoplayMs = 4800;
+    var timer = null;
+
+    function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+    var dots = [];
+    if (dotsEl) {
+      slides.forEach(function (slide, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'Ir pro slide ' + (i + 1));
+        dot.addEventListener('click', function (e) {
+          e.stopPropagation();
+          goTo(i, true);
+        });
+        dotsEl.appendChild(dot);
+        dots.push(dot);
+      });
+    }
+
+    // Reserva, na legenda, a altura da MAIOR legenda entre os slides — assim
+    // a legenda (e tudo abaixo dela) não "pula" de posição quando um slide
+    // com texto mais longo quebra em mais linhas do que o slide anterior.
+    function syncCaptionHeight() {
+      if (!captionEl) return;
+      var original = captionEl.innerHTML;
+      captionEl.style.minHeight = '0px';
+      var maxH = 0;
+      slides.forEach(function (slide) {
+        captionEl.innerHTML = slide.getAttribute('data-caption') || '';
+        maxH = Math.max(maxH, captionEl.scrollHeight);
+      });
+      captionEl.innerHTML = original;
+      captionEl.style.minHeight = maxH + 'px';
+    }
+
+    function render() {
+      if (track) track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      slides.forEach(function (slide, i) { slide.classList.toggle('is-active', i === current); });
+      dots.forEach(function (dot, i) { dot.classList.toggle('is-active', i === current); });
+      if (captionEl) captionEl.innerHTML = slides[current].getAttribute('data-caption') || '';
+      if (countEl) countEl.textContent = pad(current + 1) + ' / ' + pad(total);
+    }
+
+    function goTo(i, manual) {
+      current = (i + total) % total;
+      render();
+      if (manual) restartAutoplay();
+    }
+
+    function next(manual) { goTo(current + 1, manual); }
+    function prev(manual) { goTo(current - 1, manual); }
+
+    function startAutoplay() {
+      stopAutoplay();
+      timer = setInterval(function () { next(false); }, autoplayMs);
+    }
+    function stopAutoplay() { if (timer) { clearInterval(timer); timer = null; } }
+    function restartAutoplay() { startAutoplay(); }
+
+    if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); prev(true); });
+    if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); next(true); });
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) startAutoplay(); else stopAutoplay();
+        });
+      }, { threshold: 0.3 });
+      io.observe(root);
+    } else {
+      startAutoplay();
+    }
+
+    syncCaptionHeight();
+    render();
+
+    // o ponto de quebra de linha da legenda muda com a largura — recalcula
+    // a reserva de altura quando a tela é redimensionada.
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(syncCaptionHeight, 150);
+    });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  // Navegação por "página": clicar num trabalho leva pra página daquele case,
+  // em vez de rolar pra uma âncora dentro da mesma página contínua.
+  var HOME_IDS = ['hero', 'work', 'contato'];
+  var CASE_IDS = ['case-01', 'case-02', 'case-03', 'case-04', 'case-05', 'case-06', 'case-07', 'case-08', 'case-09'];
+  var navLinks = document.querySelectorAll('[data-route]');
+
+  function showRoute(route) {
+    var showHome = route === 'home';
+    HOME_IDS.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.hidden = !showHome;
+    });
+    CASE_IDS.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.hidden = id !== route;
+    });
+    navLinks.forEach(function (a) {
+      a.classList.toggle('is-active', a.getAttribute('data-route') === route);
+    });
+  }
+
+  function routeFromHash() {
+    var id = (location.hash || '#hero').slice(1);
+    if (CASE_IDS.indexOf(id) !== -1) return { route: id, scrollTo: null };
+    return { route: 'home', scrollTo: id === 'hero' ? null : id };
+  }
+
+  function applyRoute() {
+    var r = routeFromHash();
+    showRoute(r.route);
+    if (r.scrollTo) {
+      var el = document.getElementById(r.scrollTo);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+
+  window.addEventListener('hashchange', applyRoute);
+  applyRoute();
+})();
+</script>
+
+<script>
+(function () {
+  var root = document.getElementById('lightboxRoot');
+  if (!root) return;
+  var stage = root.querySelector('[data-lightbox-stage]');
+  var imgEl = root.querySelector('[data-lightbox-img]');
+  var captionEl = root.querySelector('[data-lightbox-caption]');
+  var closeBtn = root.querySelector('[data-lightbox-close]');
+  var prevBtn = root.querySelector('[data-lightbox-prev]');
+  var nextBtn = root.querySelector('[data-lightbox-next]');
+
+  var scale = 1, panX = 0, panY = 0;
+  var dragging = false, dragStartX = 0, dragStartY = 0, panStartX = 0, panStartY = 0;
+  var pinchDist = null;
+
+  // ---- galeria: permite ir pra próxima/anterior imagem do mesmo grupo
+  // (grade de exhibits, carrossel ou flipbook) sem fechar a lightbox ----
+  var gallery = [];
+  var galleryIndex = 0;
+
+  function renderGalleryItem() {
+    var item = gallery[galleryIndex];
+    if (!item) return;
+    imgEl.src = item.src;
+    imgEl.alt = item.alt || '';
+    if (captionEl) {
+      if (item.caption) {
+        captionEl.innerHTML = item.caption;
+        captionEl.hidden = false;
+      } else {
+        captionEl.innerHTML = '';
+        captionEl.hidden = true;
+      }
+    }
+    resetView();
+    // Sem loop: na primeira imagem não dá pra voltar, na última não dá
+    // pra avançar — a seta correspondente fica desabilitada.
+    if (prevBtn) prevBtn.disabled = galleryIndex <= 0;
+    if (nextBtn) nextBtn.disabled = galleryIndex >= gallery.length - 1;
+  }
+
+  function goToIndex(i) {
+    if (gallery.length < 2) return;
+    if (i < 0 || i > gallery.length - 1) return;
+    galleryIndex = i;
+    renderGalleryItem();
+  }
+
+  function openGallery(items, index) {
+    gallery = items || [];
+    galleryIndex = gallery.length ? Math.min(Math.max(index || 0, 0), gallery.length - 1) : 0;
+    var multi = gallery.length > 1;
+    if (prevBtn) prevBtn.hidden = !multi;
+    if (nextBtn) nextBtn.hidden = !multi;
+    renderGalleryItem();
+    root.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Monta a galeria a partir dos "irmãos" de itemEl dentro do grupo mais
+  // próximo (grade de exhibits, carrossel ou flipbook) e abre a lightbox
+  // já na posição clicada. Retorna false se itemEl não pertence a nenhum
+  // grupo reconhecido (chamador cai pro openLightbox de imagem única).
+  function openGroupGallery(itemEl, groupSelector, itemSelector, imgSelector) {
+    var group = itemEl.closest(groupSelector);
+    if (!group) return false;
+    var items = Array.prototype.slice.call(group.querySelectorAll(itemSelector));
+    var idx = items.indexOf(itemEl);
+    if (idx === -1) return false;
+    var data = items.map(function (el) {
+      var im = el.querySelector(imgSelector);
+      return {
+        src: im ? (im.getAttribute('data-full-src') || im.currentSrc || im.src) : '',
+        alt: im ? im.alt : '',
+        caption: el.getAttribute('data-caption') || ''
+      };
+    });
+    openGallery(data, idx);
+    return true;
+  }
+
+  function applyTransform() {
+    imgEl.style.transform = 'translate(' + panX + 'px, ' + panY + 'px) scale(' + scale + ')';
+  }
+
+  function clampPan() {
+    var maxX = (imgEl.offsetWidth * (scale - 1)) / 2;
+    var maxY = (imgEl.offsetHeight * (scale - 1)) / 2;
+    panX = Math.max(-maxX, Math.min(maxX, panX));
+    panY = Math.max(-maxY, Math.min(maxY, panY));
+  }
+
+  function setScale(next) {
+    scale = Math.min(4, Math.max(1, next));
+    if (scale === 1) { panX = 0; panY = 0; }
+    clampPan();
+    stage.classList.toggle('is-zoomed', scale > 1);
+    stage.style.cursor = scale > 1 ? 'grab' : 'zoom-in';
+    applyTransform();
+  }
+
+  function resetView() {
+    scale = 1; panX = 0; panY = 0;
+    stage.classList.remove('is-zoomed', 'is-dragging');
+    stage.style.cursor = 'zoom-in';
+    applyTransform();
+  }
+
+  function openLightbox(src, alt, captionHtml) {
+    openGallery([{ src: src, alt: alt, caption: captionHtml }], 0);
+  }
+
+  function closeLightbox() {
+    root.hidden = true;
+    document.body.style.overflow = '';
+    resetView();
+  }
+
+  // ---- injeta o botão de lupa em cada imagem de exhibit (carrossel/flipbook) ----
+  var ZOOM_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>';
+  // no flipbook, cada .flipbook-page-slot é uma página DIFERENTE do
+  // catálogo (a capa tem 1 slot; um spread de verdade tem 2, lado a lado)
+  // — então a lupa e a legenda vivem por slot, não por página.
+  var selectors = ['.carousel-slide img', '.flipbook-page-slot img'];
+  selectors.forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (img) {
+      var holder = img.closest('.carousel-slide, .flipbook-page-slot');
+      if (!holder || holder.querySelector('.zoom-trigger')) return;
+      // a legenda mora no próprio .carousel-slide ou no .flipbook-page-slot
+      var captionSource = img.closest('.carousel-slide') || img.closest('.flipbook-page-slot');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'zoom-trigger';
+      btn.setAttribute('aria-label', 'Ampliar imagem');
+      btn.innerHTML = ZOOM_ICON;
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var slideEl = img.closest('.carousel-slide');
+        var slotEl = img.closest('.flipbook-page-slot');
+        var opened = false;
+        if (slideEl) opened = openGroupGallery(slideEl, '[data-carousel]', '.carousel-slide', 'img');
+        else if (slotEl) opened = openGroupGallery(slotEl, '.flipbook-stage', '.flipbook-page-slot', 'img');
+        if (!opened) {
+          var cap = captionSource ? captionSource.getAttribute('data-caption') : '';
+          openLightbox(img.getAttribute('data-full-src') || img.currentSrc || img.src, img.alt, cap);
+        }
+      });
+      holder.appendChild(btn);
+    });
+  });
+
+  // ---- grade de miniaturas: card inteiro é clicável e abre com legenda ----
+  document.querySelectorAll('.exhibit-card').forEach(function (card) {
+    var frame = card.querySelector('.console-frame');
+    if (frame && !frame.querySelector('.expand-hint')) {
+      var hint = document.createElement('span');
+      hint.className = 'expand-hint';
+      hint.setAttribute('aria-hidden', 'true');
+      hint.innerHTML = ZOOM_ICON;
+      frame.appendChild(hint);
+    }
+    card.addEventListener('click', function () {
+      var img = card.querySelector('img');
+      if (!img) return;
+      var opened = openGroupGallery(card, '.exhibit-grid', '.exhibit-card', 'img');
+      if (!opened) {
+        openLightbox(img.getAttribute('data-full-src') || img.currentSrc || img.src, img.alt, card.getAttribute('data-caption') || '');
+      }
+    });
+  });
+
+  // ---- navegação entre imagens do mesmo grupo ----
+  if (prevBtn) {
+    prevBtn.addEventListener('mousedown', function (e) { e.stopPropagation(); });
+    prevBtn.addEventListener('click', function (e) { e.stopPropagation(); goToIndex(galleryIndex - 1); });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('mousedown', function (e) { e.stopPropagation(); });
+    nextBtn.addEventListener('click', function (e) { e.stopPropagation(); goToIndex(galleryIndex + 1); });
+  }
+
+  // ---- fechar ----
+  closeBtn.addEventListener('click', closeLightbox);
+  root.addEventListener('click', function (e) {
+    if (e.target === root) closeLightbox();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (root.hidden) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') goToIndex(galleryIndex + 1);
+    if (e.key === 'ArrowLeft') goToIndex(galleryIndex - 1);
+  });
+
+  // ---- zoom por scroll ----
+  stage.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    setScale(scale - e.deltaY * 0.0018);
+  }, { passive: false });
+
+  // ---- duplo clique alterna zoom ----
+  stage.addEventListener('dblclick', function () {
+    setScale(scale > 1 ? 1 : 2.2);
+  });
+
+  // ---- arrastar com mouse ----
+  stage.addEventListener('mousedown', function (e) {
+    if (scale <= 1) return;
+    dragging = true;
+    stage.classList.add('is-dragging');
+    dragStartX = e.clientX; dragStartY = e.clientY;
+    panStartX = panX; panStartY = panY;
+  });
+  window.addEventListener('mousemove', function (e) {
+    if (!dragging) return;
+    panX = panStartX + (e.clientX - dragStartX);
+    panY = panStartY + (e.clientY - dragStartY);
+    clampPan();
+    applyTransform();
+  });
+  window.addEventListener('mouseup', function () {
+    dragging = false;
+    stage.classList.remove('is-dragging');
+  });
+
+  // ---- toque: pinça pra zoom, um dedo pra arrastar ----
+  function touchDist(touches) {
+    var dx = touches[0].clientX - touches[1].clientX;
+    var dy = touches[0].clientY - touches[1].clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+  stage.addEventListener('touchstart', function (e) {
+    if (e.touches.length === 2) {
+      pinchDist = touchDist(e.touches);
+    } else if (e.touches.length === 1 && scale > 1) {
+      dragging = true;
+      dragStartX = e.touches[0].clientX; dragStartY = e.touches[0].clientY;
+      panStartX = panX; panStartY = panY;
+    }
+  }, { passive: true });
+  stage.addEventListener('touchmove', function (e) {
+    if (e.touches.length === 2 && pinchDist != null) {
+      e.preventDefault();
+      var dist = touchDist(e.touches);
+      setScale(scale + (dist - pinchDist) * 0.01);
+      pinchDist = dist;
+    } else if (e.touches.length === 1 && dragging) {
+      e.preventDefault();
+      panX = panStartX + (e.touches[0].clientX - dragStartX);
+      panY = panStartY + (e.touches[0].clientY - dragStartY);
+      clampPan();
+      applyTransform();
+    }
+  }, { passive: false });
+  stage.addEventListener('touchend', function (e) {
+    if (e.touches.length < 2) pinchDist = null;
+    if (e.touches.length === 0) dragging = false;
+  }, { passive: true });
+})();
+</script>
+<script>
+/* Hospedagem: as imagens dos cases usam loading="lazy" pra home abrir leve;
+   ao abrir um case, todas as imagens dele (inclusive slides do carrossel
+   ainda fora da tela) passam a carregar na hora. */
+(function () {
+  function warm() {
+    var id = (location.hash || '').slice(1);
+    var s = id && document.getElementById(id);
+    if (!s || !s.classList.contains('case')) return;
+    s.querySelectorAll('img[loading="lazy"]').forEach(function (i) { i.loading = 'eager'; });
+  }
+  window.addEventListener('hashchange', warm);
+  warm();
+})();
+</script>
+<script>
+/* Embed do Figma (case BetMetrica): só carrega quando o quadro chega perto da
+   tela, destrava no clique e volta a travar quando o mouse sai, com Esc, ao
+   trocar de página ou quando o quadro sai da tela. */
+(function () {
+  var box = document.querySelector('[data-figma-embed]');
+  if (!box) return;
+  var block = box.closest('[data-figma-block]') || box;
+  var stage = box.querySelector('.figma-embed-stage');
+  var frame = box.querySelector('iframe');
+  var guard = box.querySelector('.figma-embed-guard');
+
+  function load() {
+    if (!frame.getAttribute('src') && frame.dataset.src) frame.setAttribute('src', frame.dataset.src);
+  }
+  function unlock() { load(); box.classList.add('is-active'); }
+  function lock() { box.classList.remove('is-active'); }
+
+  guard.addEventListener('click', unlock);
+  stage.addEventListener('mouseleave', lock);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lock(); });
+  window.addEventListener('hashchange', lock);
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) load(); });
+    }, { rootMargin: '600px 0px' }).observe(stage);
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (!e.isIntersecting) lock(); });
+    }).observe(stage);
+  } else {
+    load();
+  }
+
+  // Onde iframes externos são bloqueados (ex.: prévia em sandbox), some com o bloco.
+  document.addEventListener('securitypolicyviolation', function (e) {
+    if (/figma\.com/.test(e.blockedURI || '')) block.hidden = true;
+  });
+})();
+</script>
+</body>
+</html>
