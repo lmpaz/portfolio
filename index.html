@@ -1011,21 +1011,21 @@
   <div class="wrap-wide">
     <div class="work-grid">
       <a href="#case-01" class="work-card">
-        <div class="work-media"><video class="cover-video" poster="assets/img-01-0852744452.jpg" autoplay loop muted playsinline preload="auto"><source src="assets/video-02-6a90dc923b.webm" type="video/webm"><source src="assets/video-03-b92505948c.mp4" type="video/mp4"></video></div>
+        <div class="work-media"><video class="cover-video" poster="assets/capa-betmetrica-c49f1ecbb5.jpg" autoplay loop muted playsinline preload="auto"><source src="assets/capa-betmetrica-2ec9bbe063.mp4" type="video/mp4"><source src="assets/capa-betmetrica-91ccb533b2.webm" type="video/webm"></video></div>
         <div class="work-meta-row"><span class="tag">Produto</span><span class="tag">Marca</span><span class="tag">Landing page</span><span class="tag">2024</span></div>
         <h3 class="work-title">BetMetrica</h3>
         <p class="work-desc">Dashboard analítico que substituiu o Power BI, com jornada unificada e sistema de permissões pra crescer em clientes sem crescer em custo.</p>
       </a>
 
       <a href="#case-02" class="work-card">
-        <div class="work-media"><video class="cover-video" poster="assets/img-04-bad7711d0e.jpg" autoplay loop muted playsinline preload="auto"><source src="assets/video-05-55c4a09751.webm" type="video/webm"><source src="assets/video-06-cb3b349b45.mp4" type="video/mp4"></video></div>
+        <div class="work-media"><video class="cover-video" poster="assets/capa-plugnplay-20485eb6b8.jpg" autoplay loop muted playsinline preload="auto"><source src="assets/capa-plugnplay-4bfc7e828b.mp4" type="video/mp4"><source src="assets/capa-plugnplay-aefe9b335d.webm" type="video/webm"></video></div>
         <div class="work-meta-row"><span class="tag">Produto</span><span class="tag">B2B</span><span class="tag">Ambiente de teste</span><span class="tag">2025</span></div>
         <h3 class="work-title">PlugnPlay</h3>
         <p class="work-desc">Site institucional e ambiente de teste completo pra uma agregadora de jogos de cassino que não tinha nada online.</p>
       </a>
 
       <a href="#case-03" class="work-card">
-        <div class="work-media"><video class="cover-video" poster="assets/img-07-938b903b45.jpg" autoplay loop muted playsinline preload="auto"><source src="assets/video-08-195171336b.webm" type="video/webm"><source src="assets/video-09-b438ceea33.mp4" type="video/mp4"></video></div>
+        <div class="work-media"><video class="cover-video" poster="assets/capa-opa-5483795ed0.jpg" autoplay loop muted playsinline preload="auto"><source src="assets/capa-opa-c7d776477a.mp4" type="video/mp4"><source src="assets/capa-opa-dbeb2cad88.webm" type="video/webm"></video></div>
         <div class="work-meta-row"><span class="tag">Direção de arte</span><span class="tag">Impresso</span><span class="tag">2025</span></div>
         <h3 class="work-title">Catálogo OPA Games</h3>
         <p class="work-desc">Catálogo físico de 32 páginas pra vendas em feira. O palpável contra a fricção de apresentar pelo celular ou notebook.</p>
@@ -2029,6 +2029,9 @@
   videos.forEach(function (video) {
     video.addEventListener('loadeddata', function () { tryPlay(video); });
     video.addEventListener('canplay', function () { tryPlay(video); });
+    // Loop: o atributo loop já reinicia sozinho; se algum navegador deixar o
+    // vídeo terminar, volta pro início e toca de novo.
+    video.addEventListener('ended', function () { video.currentTime = 0; tryPlay(video); });
   });
 
   // Assim que o card entra na tela (relevante no mobile, onde o usuário
