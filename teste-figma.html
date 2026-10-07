@@ -1013,28 +1013,23 @@
   .figma-embed-guard:focus-visible span { outline: 2px solid #fff; outline-offset: 3px; }
   .figma-embed.is-active .figma-embed-guard { opacity: 0; pointer-events: none; }
 
-  /* Botão "Tela cheia" na barra do quadro e modo expandido. O modo expandido
-     ocupa a janela inteira por CSS (position: fixed) e, onde o navegador
-     permite, também entra em tela cheia de verdade. */
-  .figma-embed { min-width: 0; }   /* item de grid: sem isso a barra não encolhe no celular */
-  .figma-embed .console-bar .path { flex: 1 1 auto; min-width: 0; }
-  .figma-embed-expand {
+  /* Tela cheia pelo botão do próprio Figma. O botão de expandir fica dentro
+     do iframe (outro domínio) e depende de o navegador aceitar o pedido de
+     tela cheia dele; em alguns (ex.: o navegador do app do Claude) o pedido é
+     ignorado. Por isso há uma área clicável invisível exatamente em cima
+     dele (canto superior direito: o botão do Figma tem 32px, a 12px das
+     bordas): o clique expande o quadro pra janela inteira por CSS e, onde o
+     navegador permite, também entra em tela cheia de verdade. Se o Figma
+     mudar o botão de lugar, ajustar top/right aqui. */
+  .figma-embed { min-width: 0; }
+  .figma-embed-hotzone {
     all: unset;
-    flex: 0 0 auto;
-    margin-left: auto;
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 2px 4px;
-    font-family: var(--mono);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: rgba(255,255,255,0.72);
+    position: absolute; top: 8px; right: 8px; z-index: 4;
+    width: 40px; height: 40px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: color 0.2s ease;
   }
-  .figma-embed-expand:hover { color: #fff; }
-  .figma-embed-expand:focus-visible { outline: 1px solid rgba(255,255,255,0.7); outline-offset: 2px; border-radius: 2px; }
-  .figma-embed-expand svg { width: 12px; height: 12px; flex: 0 0 auto; }
+  .figma-embed-hotzone:focus-visible { outline: 2px solid #4F69F6; outline-offset: -2px; }
   .figma-embed-close {
     all: unset;
     display: none;
@@ -1061,7 +1056,6 @@
   }
   @media (min-width: 1441px) {
     .figma-embed-guard span { font-size: 14.5px; }
-    .figma-embed-expand { font-size: 13px; }
     .figma-embed-close { font-size: 14.5px; }
   }
 </style>
@@ -1264,14 +1258,15 @@
         <div class="exhibits">
           <div class="figma-embed" data-figma-embed>
             <div class="console-frame">
-              <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">figma.com / Lucas Paz / Bet Metrica</span><button type="button" class="figma-embed-expand" data-figma-expand><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 1.5h3v3M10.5 1.5 7 5M4.5 10.5h-3v-3M1.5 10.5 5 7"/></svg>Tela cheia</button></div>
+              <div class="console-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="path">figma.com / Lucas Paz / Bet Metrica</span></div>
               <div class="figma-embed-holder"><div class="figma-embed-stage">
                 <iframe title="Arquivo do BetMetrica no Figma" data-src="https://embed.figma.com/design/oBELtggoZr40bHNrJUZeIl/Lucas-Paz?node-id=12-82&amp;embed-host=pazlucas&amp;footer=false&amp;page-selector=false&amp;viewport-controls=true&amp;theme=light" loading="lazy" allowfullscreen></iframe>
                 <button type="button" class="figma-embed-guard" aria-label="Explorar o arquivo no Figma"><span>Clique para explorar</span></button>
+                <button type="button" class="figma-embed-hotzone" data-figma-expand aria-label="Tela cheia" title="Tela cheia"></button>
                 <button type="button" class="figma-embed-close" data-figma-close>&#10005; Fechar</button>
               </div></div>
             </div>
-            <p class="exhibit-cap"><b>Figma.</b> Clique pra explorar: arraste pra navegar e use o zoom. Em &ldquo;Tela cheia&rdquo; o arquivo ocupa a tela toda.</p>
+            <p class="exhibit-cap"><b>Figma.</b> Clique pra explorar: arraste pra navegar e use o zoom. O bot&atilde;o no canto superior direito abre em tela cheia.</p>
           </div>
         </div>
       </div>
@@ -2827,9 +2822,10 @@
 <script>
 /* Embed do Figma (case BetMetrica): só carrega quando o quadro chega perto da
    tela; destrava no clique e volta a travar quando o mouse sai, com Esc, ao
-   trocar de página ou quando o quadro sai da tela. "Tela cheia" expande o
-   quadro pra janela inteira (e pra tela cheia de verdade onde o navegador
-   deixa); "Fechar", Esc ou sair da tela cheia do navegador desfazem. */
+   trocar de página ou quando o quadro sai da tela. O clique no botão de
+   expandir do Figma (área invisível em cima dele) expande o quadro pra janela
+   inteira e, onde o navegador deixa, pra tela cheia de verdade; o mesmo botão,
+   "Fechar", Esc ou sair da tela cheia do navegador desfazem. */
 (function () {
   var box = document.querySelector('[data-figma-embed]');
   if (!box) return;
@@ -2861,7 +2857,6 @@
         if (p && p.catch) p.catch(function () {});   // sem permissão: fica só o modo expandido por CSS
       } catch (e) {}
     }
-    if (closeBtn) closeBtn.focus({ preventScroll: true });
   }
   function collapse() {
     if (!expanded()) return;
@@ -2877,7 +2872,7 @@
 
   guard.addEventListener('click', unlock);
   stage.addEventListener('mouseleave', lock);
-  if (expandBtn) expandBtn.addEventListener('click', expand);
+  if (expandBtn) expandBtn.addEventListener('click', function () { if (expanded()) collapse(); else expand(); });
   if (closeBtn) closeBtn.addEventListener('click', collapse);
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
