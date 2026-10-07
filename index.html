@@ -992,7 +992,7 @@
   .figma-embed-guard {
     all: unset;
     position: absolute; inset: 0; z-index: 2;
-    display: flex; align-items: center; justify-content: center;
+    display: none; align-items: center; justify-content: center;
     cursor: pointer;
     background: rgba(10,10,10,0.22);
     transition: background 0.2s ease, opacity 0.2s ease;
@@ -1012,6 +1012,11 @@
   }
   .figma-embed-guard:focus-visible span { outline: 2px solid #fff; outline-offset: 3px; }
   .figma-embed.is-active .figma-embed-guard { opacity: 0; pointer-events: none; }
+  /* figma-guard-so-mobile: o guarda só existe onde rolar a página passa por cima do
+     quadro com o dedo (celular e telas de toque). Com mouse o quadro já vem liberado. */
+  @media (max-width: 640px), (hover: none) and (pointer: coarse) {
+    .figma-embed-guard { display: flex; }
+  }
 
   /* Tela cheia pelo botão do próprio Figma. O botão de expandir fica dentro
      do iframe (outro domínio) e depende de o navegador aceitar o pedido de
@@ -1243,7 +1248,7 @@
                 <button type="button" class="figma-embed-close" data-figma-close>&#10005; Fechar</button>
               </div></div>
             </div>
-            <p class="exhibit-cap"><b>Figma.</b> Clique pra explorar: arraste pra navegar e use o zoom. O bot&atilde;o no canto superior direito abre em tela cheia.</p>
+            <p class="exhibit-cap"><b>Figma.</b> Arraste pra navegar e use o zoom. O bot&atilde;o no canto superior direito abre em tela cheia.</p>
           </div>
         </div>
       </div>
