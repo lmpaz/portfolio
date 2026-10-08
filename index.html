@@ -904,6 +904,38 @@
     color: var(--ink);
   }
   .footer-col a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  /* tel-menu */
+  /* Telefone do rodapé: clicar abre um menu pequeno (copiar / WhatsApp). */
+  .tel-menu { position: relative; }
+  .tel-trigger { cursor: pointer; }
+  .tel-pop {
+    position: absolute; top: calc(100% + 8px); left: -10px; z-index: 30;
+    display: flex; flex-direction: column; gap: 2px;
+    min-width: 200px; padding: 6px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(10,10,10,0.10);
+  }
+  .tel-pop[hidden] { display: none; }
+  .tel-pop a, .tel-pop button {
+    all: unset;
+    box-sizing: border-box;
+    display: block; width: 100%;
+    padding: 9px 10px;
+    border-radius: var(--radius);
+    font-family: var(--mono);
+    font-size: 13.5px;
+    color: var(--ink);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .tel-pop a:hover, .tel-pop button:hover { background: var(--panel); text-decoration: none; }
+  .tel-pop a:focus-visible, .tel-pop button:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+  @media (min-width: 1441px) {
+    .tel-pop { min-width: 228px; }
+    .tel-pop a, .tel-pop button { font-size: 15.5px; }
+  }
   .footer-bottom {
     font-family: var(--mono);
     font-size: 12px;
@@ -2035,7 +2067,13 @@
         <div class="footer-col">
           <p class="footer-label">Contato</p>
           <a href="mailto:pazlimapaz@gmail.com">pazlimapaz@gmail.com</a>
-          <a href="https://wa.me/5582973224748" target="_blank" rel="noopener" aria-label="WhatsApp: (82) 97322-4748">(82) 97322-4748</a>
+          <div class="tel-menu" data-tel-menu>
+            <a class="tel-trigger" href="https://wa.me/5582973224748" target="_blank" rel="noopener" data-tel-trigger>(82) 97322-4748</a>
+            <div class="tel-pop" data-tel-pop role="menu" aria-label="Telefone" hidden>
+              <button type="button" role="menuitem" data-tel-copy data-number="(82) 97322-4748">Copiar n&uacute;mero</button>
+              <a role="menuitem" href="https://wa.me/5582973224748" target="_blank" rel="noopener" data-tel-wa>Abrir no WhatsApp</a>
+            </div>
+          </div>
           <a href="https://www.linkedin.com/in/limapaz" target="_blank" rel="noopener">LinkedIn</a>
         </div>
         <div class="footer-col footer-col-nav">
@@ -2893,6 +2931,54 @@
   // Onde iframes externos são bloqueados (ex.: prévia em sandbox), some com o bloco.
   document.addEventListener('securitypolicyviolation', function (e) {
     if (/figma[.]com/.test(e.blockedURI || '')) block.hidden = true;
+  });
+})();
+</script>
+<script>
+(function () {
+  // Menu do telefone no rodapé: copiar o número ou abrir o WhatsApp.
+  var root = document.querySelector('[data-tel-menu]');
+  if (!root) return;
+  var trig = root.querySelector('[data-tel-trigger]');
+  var pop = root.querySelector('[data-tel-pop]');
+  var copy = root.querySelector('[data-tel-copy]');
+  var wa = root.querySelector('[data-tel-wa]');
+  var label = copy.textContent, timer;
+  trig.setAttribute('role', 'button');
+  trig.setAttribute('aria-haspopup', 'menu');
+  trig.setAttribute('aria-expanded', 'false');
+
+  function open() { pop.hidden = false; trig.setAttribute('aria-expanded', 'true'); }
+  function close() { pop.hidden = true; trig.setAttribute('aria-expanded', 'false'); clearTimeout(timer); copy.textContent = label; }
+
+  trig.addEventListener('click', function (e) { e.preventDefault(); if (pop.hidden) open(); else close(); });
+  document.addEventListener('click', function (e) { if (!pop.hidden && !root.contains(e.target)) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !pop.hidden) { close(); trig.focus(); } });
+  window.addEventListener('hashchange', close);
+  wa.addEventListener('click', function () { close(); });
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:-1000px;left:0;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function done(ok) {
+    copy.textContent = ok ? 'N\u00famero copiado' : 'N\u00e3o deu pra copiar';
+    clearTimeout(timer);
+    timer = setTimeout(close, 1400);
+  }
+  copy.addEventListener('click', function () {
+    var text = copy.getAttribute('data-number');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(fallbackCopy(text)); });
+    } else {
+      done(fallbackCopy(text));
+    }
   });
 })();
 </script>
