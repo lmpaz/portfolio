@@ -983,12 +983,16 @@
     max-height: 82vh;
     background: #1E1E1E;
   }
-  .figma-embed-stage { position: absolute; inset: 0; background: #1E1E1E; }
+  .figma-embed-stage { position: absolute; inset: 0; background: #1E1E1E; overflow: hidden; }
   .figma-embed-stage iframe {
     position: absolute; inset: 0;
     width: 100%; height: 100%;
     border: 0; display: block;
   }
+  /* figma-sem-logo: o ícone que abre o arquivo completo no Figma fica no canto inferior
+     esquerdo do iframe e o Figma não tem opção pra tirar. O iframe é deslocado 52px pra
+     esquerda e o stage (overflow: hidden) corta essa faixa, levando o ícone junto. */
+  .figma-embed-stage iframe { left: -52px; width: calc(100% + 52px); }
   .figma-embed-guard {
     all: unset;
     position: absolute; inset: 0; z-index: 2;
