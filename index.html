@@ -702,7 +702,7 @@
     transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
     will-change: transform;
   }
-  .carousel-slide { flex: 0 0 100%; width: 100%; height: 100%; }
+  .carousel-slide { flex: 0 0 100%; width: 100%; height: 100%; cursor: zoom-in; }
   .carousel-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
   .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
   .carousel-dots button {
@@ -792,12 +792,13 @@
   .lightbox-nav {
     position: absolute; top: 50%; transform: translateY(-50%); z-index: 320;
     width: 44px; height: 44px; border-radius: 50%; padding: 0;
-    border: none; background: rgba(255,255,255,0.12); color: #fff;
+    border: none; background: rgba(10,10,10,0.55); color: #fff;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.18);
     font-family: var(--display); font-size: 24px; line-height: 1;
     display: flex; align-items: center; justify-content: center;
     cursor: pointer; transition: background 0.2s, opacity 0.2s;
   }
-  .lightbox-nav:hover:not(:disabled) { background: rgba(255,255,255,0.24); }
+  .lightbox-nav:hover:not(:disabled) { background: rgba(10,10,10,0.78); }
   .lightbox-nav:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
   .lightbox-nav[hidden] { display: none; }
   .lightbox-nav.prev { left: 14px; }
@@ -2446,7 +2447,6 @@
     function goTo(i, manual) {
       current = (i + total) % total;
       render();
-      if (manual) restartAutoplay();
     }
 
     function next(manual) { goTo(current + 1, manual); }
@@ -2462,16 +2462,8 @@
     if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); prev(true); });
     if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); next(true); });
 
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) startAutoplay(); else stopAutoplay();
-        });
-      }, { threshold: 0.3 });
-      io.observe(root);
-    } else {
-      startAutoplay();
-    }
+    // Sem troca automática de slide (pedido do Lucas, 10/10/2026): o carrossel
+    // só anda pelas setas, pelos pontos ou dentro da galeria ampliada.
 
     syncCaptionHeight();
     render();
@@ -2681,6 +2673,15 @@
         }
       });
       holder.appendChild(btn);
+    });
+  });
+
+  // ---- carrossel: clicar em qualquer ponto da imagem abre a galeria ampliada,
+  // já no slide clicado, com as setas pra passar as outras ----
+  document.querySelectorAll('[data-carousel] .carousel-slide').forEach(function (slide) {
+    slide.addEventListener('click', function (e) {
+      if (e.target.closest('button')) return;
+      openGroupGallery(slide, '[data-carousel]', '.carousel-slide', 'img');
     });
   });
 
